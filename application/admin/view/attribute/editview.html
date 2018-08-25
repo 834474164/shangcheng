@@ -1,0 +1,54 @@
+
+    <!-- 右 -->
+    <div class="content">
+        <div class="header">
+            <h1 class="page-title">商品属性编辑</h1>
+        </div>
+
+        <div class="well">
+            <!-- edit form -->
+            <form id="tab" action="{:url('edit')}" method="post">
+                <label>属性名称：</label>
+                <input type="hidden" name="id" value="{$attribute.id}">
+                <input type="text" name="attr_name" value="{$attribute.attr_name}" class="input-xlarge">
+                <label>商品类型：</label>
+                <select name="type_id" class="dfinput">
+                    <option value="0">--请选择--</option>
+                    {foreach $typedata as $v}
+                    <option value="{$v.id}" {if($v.id eq $attribute.type_id)}selected="selected"{/if}>{$v.type_name}</option>
+                    {/foreach}
+                </select>
+                <label>属性类型：</label>
+                <span>
+                    <input id="weiyi" type="radio" name="attr_type" value="0" checked="checked">唯一属性&emsp;
+                </span>
+                <span>
+                    <input type="radio" name="attr_type" value="1" {if($attribute.attr_type eq 1)}checked="checked"{/if}>单选属性
+                </span>
+                <label>录入方式：</label>
+                <span class="input_type">
+                    <input type="radio" name="attr_input_type" value="0" checked="checked">输入框&emsp;
+                </span>
+                <span class="input_type">
+                    <input type="radio" name="attr_input_type" value="1"{if($attribute.attr_input_type eq 1)}checked="checked"{/if}>下拉列表
+                </span>
+                <span class="input_type hide">
+                    <input type="radio" name="attr_input_type" value="2"{if($attribute.attr_input_type eq 2)}checked="selected"{/if}>多选框
+                </span>
+                <label>可选值：</label>
+                <textarea name="attr_values" placeholder="请输入可选值，多个值之间请使用英文“,”分隔开" class="textinput">{$attribute.attr_values}</textarea>
+                <label></label>
+                <button class="btn btn-primary" type="submit">保存</button>
+            </form>
+        </div>
+
+    <script type="text/javascript">
+        $(function(){
+            if($('#weiyi').prop('checked')==''){
+                $('.input_type').toggleClass('hide');
+            }
+            $('input[name=attr_type]').change(function(){
+                $('.input_type').toggleClass('hide');
+            })
+        })
+    </script>

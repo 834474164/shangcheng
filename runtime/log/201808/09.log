@@ -1,0 +1,699 @@
+---------------------------------------------------------------
+[ 2018-08-09T15:09:41+08:00 ] 127.0.0.1 GET /
+[ info ] local.shangcheng.com/ [运行时间：0.868044s][吞吐率：1.15req/s] [内存消耗：1,310.84kb] [文件加载：48]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-09T15:09:41+08:00 ] 127.0.0.1 GET /admin/login/index.html
+[ info ] local.shangcheng.com/admin/login/index.html [运行时间：0.239227s][吞吐率：4.18req/s] [内存消耗：1,308.98kb] [文件加载：47]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/login/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\www\shangcheng\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-09T15:09:41+08:00 ] 127.0.0.1 GET /captcha.html
+[ info ] local.shangcheng.com/captcha.html [运行时间：0.075616s][吞吐率：13.22req/s] [内存消耗：1,101.44kb] [文件加载：37]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\www\shangcheng\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-09T15:09:46+08:00 ] 127.0.0.1 GET /captcha.html?0.6517566287097835
+[ info ] local.shangcheng.com/captcha.html?0.6517566287097835 [运行时间：0.011584s][吞吐率：86.33req/s] [内存消耗：1,101.65kb] [文件加载：37]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  '0_6517566287097835' => '',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\www\shangcheng\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-09T15:09:54+08:00 ] 127.0.0.1 POST /admin/login/login.html
+[ info ] local.shangcheng.com/admin/login/login.html [运行时间：1.544201s][吞吐率：0.65req/s] [内存消耗：2,233.55kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'content-length' => '43',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'referer' => 'http://local.shangcheng.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/login/login_html' => '',
+  'username' => 'admin',
+  'password' => '123456',
+  'captcha' => 'anv2',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ D:\www\shangcheng\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\www\shangcheng\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.018684s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_manager` [ RunTime:0.028128s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_manager` WHERE (  `username` = 'admin'  AND `password` = '1b94116a32f56bf009f9be5f54c14baa' ) AND `tpshop_manager`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000464s ]
+---------------------------------------------------------------
+[ 2018-08-09T15:09:59+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] local.shangcheng.com/admin/index/index.html [运行时间：1.380659s][吞吐率：0.72req/s] [内存消耗：2,235.69kb] [文件加载：59]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\www\shangcheng\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/admin\view\index\index.html [ array (
+  0 => 'top_nav',
+  1 => 'second_nav',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.013100s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_auth` [ RunTime:0.074216s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_auth` WHERE (  `pid` = 0  AND `is_nav` = 1 ) AND `tpshop_auth`.`delete_time` IS NULL [ RunTime:0.001304s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_auth` WHERE (  `pid` > 0  AND `is_nav` = 1 ) AND `tpshop_auth`.`delete_time` IS NULL [ RunTime:0.001254s ]
+---------------------------------------------------------------
+[ 2018-08-09T15:13:43+08:00 ] 127.0.0.1 GET /
+[ info ] local.shangcheng.com/ [运行时间：1.135391s][吞吐率：0.88req/s] [内存消耗：2,232.80kb] [文件加载：59]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\www\shangcheng\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/admin\view\index\index.html [ array (
+  0 => 'top_nav',
+  1 => 'second_nav',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.023395s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_auth` [ RunTime:0.069788s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_auth` WHERE (  `pid` = 0  AND `is_nav` = 1 ) AND `tpshop_auth`.`delete_time` IS NULL [ RunTime:0.000840s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_auth` WHERE (  `pid` > 0  AND `is_nav` = 1 ) AND `tpshop_auth`.`delete_time` IS NULL [ RunTime:0.000723s ]
+---------------------------------------------------------------
+[ 2018-08-09T15:13:56+08:00 ] 127.0.0.1 GET /home/index/index.html
+[ info ] local.shangcheng.com/home/index/index.html [运行时间：1.637840s][吞吐率：0.61req/s] [内存消耗：3,555.55kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\www\shangcheng\application\home\controller\Index.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\index\index.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.023667s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.210253s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.018413s ]
+---------------------------------------------------------------
+[ 2018-08-09T15:14:04+08:00 ] 127.0.0.1 GET /home/goods/list/cate_id/128.html
+[ info ] local.shangcheng.com/home/goods/list/cate_id/128.html [运行时间：1.554389s][吞吐率：0.64req/s] [内存消耗：3,427.59kb] [文件加载：62]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'goods',
+    2 => 'list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/home/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/goods/list/cate_id/128_html' => '',
+  'cate_id' => '128',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Goods->list[ D:\www\shangcheng\application\home\controller\Goods.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\goods\list.html [ array (
+  0 => 'cates',
+  1 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.014080s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.063997s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.004452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_goods` [ RunTime:0.033519s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tpshop_goods` WHERE (  `cate_id` = 128 ) AND `tpshop_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.016833s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_goods` WHERE (  `cate_id` = 128 ) AND `tpshop_goods`.`delete_time` IS NULL LIMIT 0,1 [ RunTime:0.000493s ]
+---------------------------------------------------------------
+[ 2018-08-09T15:14:04+08:00 ] 127.0.0.1 GET /static/home/fonts//icon-touch.woff?-t7qwrr
+[ info ] local.shangcheng.com/static/home/fonts//icon-touch.woff?-t7qwrr [运行时间：0.104654s][吞吐率：9.56req/s] [内存消耗：1,082.22kb] [文件加载：38]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'home',
+    2 => 'fonts',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/static/home/css/all.css',
+  'accept-encoding' => 'identity',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/static/home/fonts/icon-touch_woff' => '',
+  '-t7qwrr' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-09T15:14:05+08:00 ] 127.0.0.1 GET /static/home/fonts//icon-touch.ttf?-t7qwrr
+[ info ] local.shangcheng.com/static/home/fonts//icon-touch.ttf?-t7qwrr [运行时间：0.011979s][吞吐率：83.48req/s] [内存消耗：1,082.22kb] [文件加载：38]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'home',
+    2 => 'fonts',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/static/home/css/all.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/static/home/fonts/icon-touch_ttf' => '',
+  '-t7qwrr' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-09T15:14:13+08:00 ] 127.0.0.1 GET /home/goods/detail.html
+[ info ] local.shangcheng.com/home/goods/detail.html [运行时间：1.394506s][吞吐率：0.72req/s] [内存消耗：3,553.62kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'goods',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/home/goods/list/cate_id/128.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/goods/detail_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Goods->detail[ D:\www\shangcheng\application\home\controller\Goods.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\goods\detail.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.024150s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.074892s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.004187s ]
+---------------------------------------------------------------
+[ 2018-08-09T15:14:13+08:00 ] 127.0.0.1 GET /static/home/fonts//icon-pc.woff?59lb71
+[ info ] local.shangcheng.com/static/home/fonts//icon-pc.woff?59lb71 [运行时间：0.013691s][吞吐率：73.04req/s] [内存消耗：1,082.21kb] [文件加载：38]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'home',
+    2 => 'fonts',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/static/home/css/all.css',
+  'accept-encoding' => 'identity',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/static/home/fonts/icon-pc_woff' => '',
+  '59lb71' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-09T15:14:13+08:00 ] 127.0.0.1 GET /static/home/fonts//icon-pc.ttf?59lb71
+[ info ] local.shangcheng.com/static/home/fonts//icon-pc.ttf?59lb71 [运行时间：0.032815s][吞吐率：30.47req/s] [内存消耗：1,082.20kb] [文件加载：38]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'home',
+    2 => 'fonts',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/static/home/css/all.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/static/home/fonts/icon-pc_ttf' => '',
+  '59lb71' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-09T15:21:16+08:00 ] 127.0.0.1 GET /home/goods/detail.html
+[ info ] local.shangcheng.com/home/goods/detail.html [运行时间：1.305035s][吞吐率：0.77req/s] [内存消耗：3,956.02kb] [文件加载：60]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'goods',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/home/goods/list/cate_id/128.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/goods/detail_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Goods->detail[ D:\www\shangcheng\application\home\controller\Goods.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\goods\detail.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.016981s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.022137s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.002222s ]
+---------------------------------------------------------------
+[ 2018-08-09T15:21:16+08:00 ] 127.0.0.1 GET /static/home/fonts//icon-pc.woff?59lb71
+[ info ] local.shangcheng.com/static/home/fonts//icon-pc.woff?59lb71 [运行时间：0.027766s][吞吐率：36.02req/s] [内存消耗：1,082.80kb] [文件加载：38]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'home',
+    2 => 'fonts',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/static/home/css/all.css',
+  'accept-encoding' => 'identity',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/static/home/fonts/icon-pc_woff' => '',
+  '59lb71' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-09T15:21:16+08:00 ] 127.0.0.1 GET /static/home/fonts//icon-pc.ttf?59lb71
+[ info ] local.shangcheng.com/static/home/fonts//icon-pc.ttf?59lb71 [运行时间：0.013245s][吞吐率：75.50req/s] [内存消耗：1,082.78kb] [文件加载：38]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'home',
+    2 => 'fonts',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/static/home/css/all.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/static/home/fonts/icon-pc_ttf' => '',
+  '59lb71' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-09T15:21:33+08:00 ] 127.0.0.1 GET /home/goods/detail.html
+[ info ] local.shangcheng.com/home/goods/detail.html [运行时间：1.128858s][吞吐率：0.89req/s] [内存消耗：3,955.91kb] [文件加载：60]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'goods',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/home/goods/list/cate_id/128.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/goods/detail_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Goods->detail[ D:\www\shangcheng\application\home\controller\Goods.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\goods\detail.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.011559s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.029066s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.001625s ]
+---------------------------------------------------------------
+[ 2018-08-09T15:21:33+08:00 ] 127.0.0.1 GET /static/home/fonts//icon-pc.woff?59lb71
+[ info ] local.shangcheng.com/static/home/fonts//icon-pc.woff?59lb71 [运行时间：0.014313s][吞吐率：69.87req/s] [内存消耗：1,082.80kb] [文件加载：38]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'home',
+    2 => 'fonts',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/static/home/css/all.css',
+  'accept-encoding' => 'identity',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/static/home/fonts/icon-pc_woff' => '',
+  '59lb71' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-09T15:21:33+08:00 ] 127.0.0.1 GET /static/home/fonts//icon-pc.ttf?59lb71
+[ info ] local.shangcheng.com/static/home/fonts//icon-pc.ttf?59lb71 [运行时间：0.012302s][吞吐率：81.29req/s] [内存消耗：1,082.78kb] [文件加载：38]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'home',
+    2 => 'fonts',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=p7248ksmmr2sgg3a6keg2t6102',
+  'referer' => 'http://local.shangcheng.com/static/home/css/all.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/static/home/fonts/icon-pc_ttf' => '',
+  '59lb71' => '',
+)
+[ info ] [ LOG ] INIT File

@@ -1,0 +1,46 @@
+
+    <!-- 右 -->
+    <div class="content">
+        <div class="header">
+            <h1 class="page-title">分派权限</h1>
+        </div>
+
+        <div class="well">
+        正在给【主管】分派权限
+        <form action="{:url('create')}" method="post">
+            <!--保存角色id-->
+            <input type="hidden" name="role_id" value="{$id}">
+            <!-- table -->
+            <table class="table table-bordered table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>权限分类</th>
+                        <th>权限</th>
+                    </tr>
+                </thead>
+                <tbody>
+<!--一级权限-->
+{foreach $authdata as $firstauth}
+                {if($firstauth.pid==0)}
+                    <tr class="success">
+                        <td>
+                            <input type="checkbox" name="id[]" value="{$firstauth.id}"  checked="checked">{$firstauth.auth_name}
+                        </td>
+                        <td>
+                            {foreach $authdata as $secondauth}
+                            {if($firstauth.id eq $secondauth.pid)}
+                            <input {in name="secondauth.id" value="$role_auth_ids"}checked="checked"{/in} type="checkbox" name="id[]" value="{$secondauth.id}" >{$secondauth.auth_name}
+                            {/if}
+                            {/foreach}
+                        </td>
+                    </tr>
+                {/if}
+{/foreach}
+<!--二级权限-->
+
+
+                </tbody>
+            </table>
+            <button class="btn btn-primary" type="submit">保存</button>
+        </form>
+        </div>

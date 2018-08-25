@@ -1,0 +1,98 @@
+<!--分页按钮样式-->
+<style type="text/css">
+    .pagination li{list-style:none;float:left;margin-left:10px;
+        padding:0 10px;
+        background-color:#5a98de;
+        border:1px solid #ccc;
+        height:26px;
+        line-height:26px;
+        cursor:pointer;color:#fff;
+    }
+    .pagination li a{color:white;padding: 0;line-height: inherit;border: none;}
+    .pagination li a:hover{background-color: #5a98de;}
+    .pagination li.active{background-color:white;color:gray;}
+    .pagination li.disabled{background-color:white;color:gray;}
+</style>
+<script>
+$(function(){
+    $('.Goods_delete').click(function(){
+        var id=$(this).closest('tr').attr('goods_id');
+        alert(id);
+        var _this=this;
+        id='id='+id;
+
+        $.ajax({
+            'url':"{:url('admin/goods/goods_delete')}",
+            'datatype':'json',
+            'type':'post',
+            'data':id,
+            'success':function(res){
+                if(res.msg=='success'){
+                    $(_this).closest('tr').remove();
+                }else{
+                    alert('网络繁忙');
+                }
+            }
+        });
+    });
+});
+
+
+</script>
+    <!-- 右 -->
+    <div class="content">
+        <div class="header">
+            <h1 class="page-title">商品列表</h1>
+        </div>
+
+        <div class="well">
+            <!-- search button -->
+            <form action="" method="get" class="form-search">
+                <div class="row-fluid" style="text-align: left;">
+                    <div class="pull-left span4 unstyled">
+                        <p> 商品名称：<input class="input-medium" name="" type="text"></p>
+                    </div>
+                </div>
+                <button type="submit" class="btn">查找</button>
+                <a class="btn btn-primary" href="{:url('create')}">新增</a>
+            </form>
+        </div>
+        <div class="well">
+            <!-- table -->
+            <table class="table table-bordered table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>商品名称</th>
+                        <th>商品价格</th>
+                        <th>商品数量</th>
+                        <th>商品logo</th>
+                        <th>添加时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {foreach $goodsdata as $k=>$v}
+                    <tr goods_id="{$v.id}" class="success">
+                        <td>{$k+1}</td>
+                        <td><a href="javascript:void(0);">{$v.goods_name}</a></td>
+                        <td>{$v.goods_price}</td>
+                        <td>{$v.goods_number}</td>
+                        <td><img src="{$v.goods_logo}"></td>
+                        <td>{$v.create_time}</td>
+                        <td>
+                            <a href="{:url('update',['id'=>$v.id])}"> 编辑 </a>
+                            <a href="javascript:void(0);" class="Goods_delete"> 删除 </a>
+                        </td>
+                    </tr>
+                {/foreach}
+                </tbody>
+            </table>
+            <!-- pagination -->
+            <div class="pagination">
+                <ul>
+                    {$goodsdata->render()}
+                </ul>
+            </div>
+        </div>
+        

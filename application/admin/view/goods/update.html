@@ -1,0 +1,293 @@
+<script>
+    $(function(){
+        //一级分类菜单绑定change事件
+        $('#category_one').change(function(){
+            var id_cate_one=$('#category_one').val();
+            $.ajax({
+                'url':"{:url('category/select_two')}",
+                'datatype':'json',
+                'type':'post',
+                'data':'id='+id_cate_one,
+                'success':function(res){
+                    $('#category_two').html('<option value="">请选择二级分类</option>');
+                    var str='<option value="">请选择二级分类</option>';
+                    $.each(res.category_two,function(i,j){
+                        str+="<option value=\""+j['id']+"\">"+j['cate_name']+"</option>";
+                    });
+                    $('#category_two').html(str);
+                }
+            });
+        });
+
+
+        //二级分类绑定change事件
+        $('#category_two').change(function(){
+            var id_cate_two=$('#category_two').val();
+            $.ajax({
+                'url':"{:url('category/select_three')}",
+                'datatype':'json',
+                'type':'post',
+                'data':'id='+id_cate_two,
+                'success':function(res){
+                    $('#category_three').html('<option value="">请选择三级分类</option>');
+                    var str='<option value="">请选择三级分类</option>';
+                    $.each(res.category_three,function(i,j){
+                        str+="<option value=\""+j['id']+"\">"+j['cate_name']+"</option>";
+                    });
+                    $('#category_three').html(str);
+                }
+            });
+        });
+
+
+        //显示当前商品的属性
+        var type_id=$('#type_name').val();
+        var goods_id=$('#goodsId').val();
+        var data={'type_id':type_id,'goods_id':goods_id};
+        $.ajax({
+            'url':"{:url('attribute/select_attribute_edit')}",
+            'data':data,
+            'datatype':'json',
+            'type':'post',
+            'success':function(res){
+
+                if(res.msg=='success'){
+
+                    var str='';
+                    $.each(res.data,function(i,v){
+
+                        if(v['attr_input_type']==0){
+                            str+="<label>"+v['attr_name']+"</label>";
+                            str+="<input type=\"text\" name=\"attr_values["+v['id']+"][]\" placeholder=\""+v['attr_values']+"\" class=\"input-xlarge\" value='"+res.attr_str[v['id']]+"'><br/>";
+
+                        }else if(v['attr_input_type']==1){
+                            str+="<label>"+v['attr_name']+"</label>";
+                            str+='<select name="attr_values['+v['id']+'][]">';
+                            var attrs=v['attr_values'].split(',');
+                            $.each(attrs,function(a,b){
+                                if(b==res.attr_str[v['id']]){
+                                    str+="<option selected='selected' value='"+b+"'>"+b+"</option>";
+                                }else{
+                                    str+="<option value='"+b+"'>"+b+"</option>";
+                                }
+
+                            });
+                            str+='</select><br/>';
+                        }else if(v['attr_input_type']==2){
+                            var attra=v['attr_values'].split(',');
+                            str+="<label>"+v['attr_name']+"</label>";
+                            $.each(attra,function(c,d){
+                                console.log(res.attr_str[v['id']]);
+                                if(!($.inArray(d,res.attr_str[v['id']])===false)){
+                                    str+="<input checked='checked' type='checkbox' name='attr_values["+v['id']+"][]' value='"+d+"'/>"+d;
+                                }else{
+                                    str+="<input type='checkbox' name='attr_values["+v['id']+"][]' value='"+d+"'/>"+d;
+                                }
+
+                            });
+                            str+="<br/>";
+
+                        }
+
+                    });
+
+                    $('#box').html(str);
+                }
+            }
+
+        });
+        //商品类型绑定change事件
+        $('#type_name').change(function(){
+
+            var type_id=$(this).val();
+            var data={'type_id':type_id};
+            $.ajax({
+                'url':"{:url('attribute/select_attribute')}",
+                'data':data,
+                'datatype':'json',
+                'type':'post',
+                'success':function(res){
+
+                    if(res.msg=='success'){
+
+                        var str='';
+                        $.each(res.data,function(i,v){
+
+                            if(v['attr_input_type']==0){
+                                str+="<label>"+v['attr_name']+"</label>";
+                                str+="<input type=\"text\" name=\"attr_values["+v['id']+"][]\" placeholder=\""+v['attr_values']+"\" class=\"input-xlarge\"><br/>";
+
+                            }else if(v['attr_input_type']==1){
+                                str+="<label>"+v['attr_name']+"</label>";
+                                str+='<select name="attr_values['+v['id']+'][]">';
+                                var attrs=v['attr_values'].split(',');
+                                $.each(attrs,function(a,b){
+                                    str+="<option value='"+b+"'>"+b+"</option>"
+                                });
+                                str+='</select><br/>';
+                            }else if(v['attr_input_type']==2){
+                                var attra=v['attr_values'].split(',');
+                                str+="<label>"+v['attr_name']+"</label>";
+                                $.each(attra,function(c,d){
+                                    str+="<input type='checkbox' name='attr_values["+v['id']+"][]' value='"+d+"'/>"+d+"";
+                                });
+                                str+="<br/>";
+
+                            }
+
+                        });
+
+                        $('#box').html(str);
+                    }
+                }
+
+            });
+
+
+        });
+
+        //给加号绑定点击事件
+        $('.add').click(function(){
+            var add_div="<div>[<a href=\"javascript:void(0);\" class=\"sub\">-</a>]商品图片：<input type=\"file\" name=\"goods_pics[]\" value=\"\" class=\"input-xlarge\"></div>";
+            $(this).parent().after(add_div);
+        });
+        //给减号绑定点击事件
+        $('.sub').live('click',function(){
+            $(this).parent().remove();
+        });
+
+        //删除相册
+        //给删除按钮绑定点击事件
+        $('.picsdelete').click(function(){
+            //拿到相册id
+            var id=$(this).closest('div').attr('picsid');
+            var data='id='+id;
+            var _this=this;
+            //发送ajax请求
+            $.ajax({
+                'url':"{:url('admin/goodspics/delete')}",
+                'data':data,
+                'datatype':'json',
+                'type':'post',
+                'success':function(res){
+                    if(res.msg=='success'){
+                        $(_this).closest('div').remove();
+                    }
+                }
+            });
+
+           });
+
+
+
+
+
+    });
+</script>
+    <!-- 右 -->
+    <div class="content">
+        <div class="header">
+            <h1 class="page-title">商品编辑</h1>
+        </div>
+        
+        <!-- edit form -->
+        <form action="{:url('edit')}" method="post" id="tab" enctype="multipart/form-data">
+            <ul class="nav nav-tabs">
+              <li role="presentation" class="active"><a href="#basic" data-toggle="tab">基本信息</a></li>
+              <li role="presentation"><a href="#desc" data-toggle="tab">商品描述</a></li>
+              <li role="presentation"><a href="#attr" data-toggle="tab">商品属性</a></li>
+              <li role="presentation"><a href="#pics" data-toggle="tab">商品相册</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="basic">
+                    <div class="well">
+                        <label>商品名称：</label>
+                        <input type="text" name="goods_name" value="{$goods.goods_name}" class="input-xlarge">
+                        <label>商品价格：</label>
+                        <input type="text" name="goods_price" value="{$goods.goods_price}" class="input-xlarge">
+                        <label>商品数量：</label>
+                        <input type="text" name="goods_number" value="{$goods.goods_number}" class="input-xlarge">
+                        <label>商品logo：</label>
+                        <img src="{$goods.goods_logo}" alt="商品图片">
+                        <input type="file" name="goods_logo" value="" class="input-xlarge">
+                        <label>商品分类：</label>
+                        <select name="" class="input-xlarge" id="category_one">
+                            <option value="">请选择一级分类</option>
+                            {foreach $cate_one as $v}
+                            <option value="{$v.id}" {if($v.id eq $cate_one_id)}selected="selected"{/if}>{$v.cate_name}</option>
+                            {/foreach}
+
+                        </select>
+                        <select name="" class="input-xlarge" id="category_two">
+                            <option value="">请选择二级分类</option>
+                            {foreach $cate_two as $v}
+                            <option value="{$v.id}" {if($v.id eq $cate_two_id)}selected="selected"{/if}>{$v.cate_name}</option>
+                            {/foreach}
+                        </select>
+                        <select name="cate_id" class="input-xlarge" id="category_three">
+                            <option value="">请选择三级分类</option>
+                            {foreach $cate_three as $v}
+                            <option value="{$v.id}"{if($v.id eq $cate_three_id)}selected="selected"{/if}>{$v.cate_name}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <!--加入富文本编辑器插件-->
+                <script src="/plugins/ueditor/ueditor.config.js"></script>
+                <script src="/plugins/ueditor/ueditor.all.min.js"></script>
+                <script src="/plugins/ueditor/lang/zh-cn/zh-cn.js"></script>
+                <div class="tab-pane fade in" id="desc">
+                    <div class="well">
+                        <label>商品简介：</label>
+                        <textarea id="ueditor" style="width:500px;" value="Smith" name="goods_introduce" rows="3" class="input-xlarge">{$goods.goods_introduce}</textarea>
+                    </div>
+                </div>
+                <div class="tab-pane fade in" id="attr">
+                    <div class="well">
+                        <input type="hidden" name="goods_id" value="{$goods.id}" id="goodsId">
+                        <label>商品类型：</label>
+                        <select name="type_id" class="input-xlarge" id="type_name">
+                            {foreach $type as $v}
+
+                            <option value="{$v.id}" {if($v.id eq $type_id)}selected="selected"{/if}>{$v.type_name}</option>
+
+                            {/foreach}
+                        </select>
+                        <div id="box">
+                    <!--属性显示-->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tab-pane fade in" id="pics">
+                    <!--插入商品相册图片-->
+                    {foreach $picsdata as $v}
+                    <div picsid="{$v.id}">
+                        <img src="{$v.pics_sma}">
+                        <a class="picsdelete" src="javascript:;">删除</a>
+                    </div>
+                    {/foreach}
+                    <div class="well">
+                            <div>[<a href="javascript:void(0);" class="add">+</a>]商品图片：<input type="file" name="goods_pics[]" value="" class="input-xlarge"></div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">保存</button>
+            </div>
+        </form>
+
+    <script type="text/javascript">
+        $(function(){
+            $('.add').click(function(){
+                var add_div = '<div>[<a href="javascript:void(0);" class="sub">-</a>]商品图片：<input type="file" name="goods_pics[]" value="" class="input-xlarge"></div>';
+                $(this).parent().after(add_div);
+            });
+            $('.sub').live('click',function(){
+                $(this).parent().remove();
+            });
+
+
+            UE.getEditor('ueditor');
+
+        });
+    </script>

@@ -1,0 +1,712 @@
+---------------------------------------------------------------
+[ 2018-08-19T17:00:52+08:00 ] 127.0.0.1 GET /
+[ info ] local.shangcheng.com/ [运行时间：0.086461s][吞吐率：11.57req/s] [内存消耗：1,317.37kb] [文件加载：48]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-19T17:00:52+08:00 ] 127.0.0.1 GET /admin/login/index.html
+[ info ] local.shangcheng.com/admin/login/index.html [运行时间：0.014895s][吞吐率：67.14req/s] [内存消耗：1,315.52kb] [文件加载：47]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/admin/login/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\www\shangcheng\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-19T17:00:53+08:00 ] 127.0.0.1 GET /captcha.html
+[ info ] local.shangcheng.com/captcha.html [运行时间：0.136171s][吞吐率：7.34req/s] [内存消耗：1,107.97kb] [文件加载：37]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'referer' => 'http://local.shangcheng.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\www\shangcheng\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-19T17:01:10+08:00 ] 127.0.0.1 GET /home/filedown/index.html
+[ info ] local.shangcheng.com/home/filedown/index.html [运行时间：0.012298s][吞吐率：81.31req/s] [内存消耗：1,254.98kb] [文件加载：44]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/index_html' => '',
+)
+[ info ] [ RUN ] app\home\controller\Filedown->index[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-19T17:01:34+08:00 ] 127.0.0.1 GET /home/filedown/index.html
+[ info ] local.shangcheng.com/home/filedown/index.html [运行时间：0.043870s][吞吐率：22.79req/s] [内存消耗：1,255.48kb] [文件加载：44]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/index_html' => '',
+)
+[ info ] [ RUN ] app\home\controller\Filedown->index[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-19T17:04:58+08:00 ] 127.0.0.1 GET /home/filedown/test.html
+[ info ] local.shangcheng.com/home/filedown/test.html [运行时间：0.133926s][吞吐率：7.47req/s] [内存消耗：1,533.84kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/test_html' => '',
+)
+[ info ] [ RUN ] app\home\controller\Filedown->test[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\filedown\test.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: cates[D:\www\shangcheng\runtime\temp\ea57343f6bee3e2945da0aa0574fb05a.php:111]
+---------------------------------------------------------------
+[ 2018-08-19T17:05:44+08:00 ] 127.0.0.1 GET /home/filedown/test.html
+[ info ] local.shangcheng.com/home/filedown/test.html [运行时间：1.799509s][吞吐率：0.56req/s] [内存消耗：3,516.72kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/test_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->test[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\filedown\test.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.397099s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.257710s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.015990s ]
+---------------------------------------------------------------
+[ 2018-08-19T17:47:43+08:00 ] 127.0.0.1 GET /home/filedown/test.html
+[ info ] local.shangcheng.com/home/filedown/test.html [运行时间：1.164420s][吞吐率：0.86req/s] [内存消耗：3,882.84kb] [文件加载：60]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/test_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->test[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\filedown\test.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.030647s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.028364s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.001865s ]
+---------------------------------------------------------------
+[ 2018-08-19T17:47:46+08:00 ] 127.0.0.1 GET /home/filedown/index.html
+[ info ] local.shangcheng.com/home/filedown/index.html [运行时间：1.156379s][吞吐率：0.86req/s] [内存消耗：3,170.40kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'referer' => 'http://local.shangcheng.com/home/filedown/test.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->index[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.033588s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.044606s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.004816s ]
+---------------------------------------------------------------
+[ 2018-08-19T17:51:25+08:00 ] 127.0.0.1 GET /home/filedown/test.html
+[ info ] local.shangcheng.com/home/filedown/test.html [运行时间：1.141548s][吞吐率：0.88req/s] [内存消耗：3,520.66kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/test_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->test[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\filedown\test.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.017394s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.052643s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.001831s ]
+---------------------------------------------------------------
+[ 2018-08-19T17:51:28+08:00 ] 127.0.0.1 GET /home/filedown/index.html
+[ info ] local.shangcheng.com/home/filedown/index.html [运行时间：1.152545s][吞吐率：0.87req/s] [内存消耗：3,170.40kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'referer' => 'http://local.shangcheng.com/home/filedown/test.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->index[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.005171s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.077972s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.006950s ]
+---------------------------------------------------------------
+[ 2018-08-19T17:51:45+08:00 ] 127.0.0.1 GET /home/filedown/test.html
+[ info ] local.shangcheng.com/home/filedown/test.html [运行时间：1.113551s][吞吐率：0.90req/s] [内存消耗：3,520.72kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/test_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->test[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\filedown\test.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.014251s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.016735s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.001618s ]
+---------------------------------------------------------------
+[ 2018-08-19T17:53:00+08:00 ] 127.0.0.1 GET /home/filedown/test.html
+[ info ] local.shangcheng.com/home/filedown/test.html [运行时间：1.200828s][吞吐率：0.83req/s] [内存消耗：3,520.30kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/test_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->test[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\filedown\test.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.037627s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.068590s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.003709s ]
+---------------------------------------------------------------
+[ 2018-08-19T17:53:04+08:00 ] 127.0.0.1 GET /home/filedown/index.html
+[ info ] local.shangcheng.com/home/filedown/index.html [运行时间：1.171208s][吞吐率：0.85req/s] [内存消耗：3,169.98kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'referer' => 'http://local.shangcheng.com/home/filedown/test.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->index[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.039826s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.059348s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.003693s ]
+---------------------------------------------------------------
+[ 2018-08-19T17:59:42+08:00 ] 127.0.0.1 GET /home/filedown/test.html
+[ info ] local.shangcheng.com/home/filedown/test.html [运行时间：1.178004s][吞吐率：0.85req/s] [内存消耗：3,520.30kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/test_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->test[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\filedown\test.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.046215s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.046206s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.003540s ]
+---------------------------------------------------------------
+[ 2018-08-19T17:59:44+08:00 ] 127.0.0.1 GET /home/filedown/index.html
+[ info ] local.shangcheng.com/home/filedown/index.html [运行时间：1.151800s][吞吐率：0.87req/s] [内存消耗：3,169.98kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'referer' => 'http://local.shangcheng.com/home/filedown/test.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->index[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.035024s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.061711s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.003869s ]
+---------------------------------------------------------------
+[ 2018-08-19T18:00:08+08:00 ] 127.0.0.1 GET /home/filedown/index.html
+[ info ] local.shangcheng.com/home/filedown/index.html [运行时间：1.162448s][吞吐率：0.86req/s] [内存消耗：3,169.98kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'referer' => 'http://local.shangcheng.com/home/filedown/test.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->index[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.028759s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.067159s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.003485s ]
+---------------------------------------------------------------
+[ 2018-08-19T18:01:36+08:00 ] 127.0.0.1 GET /home/filedown/test.html
+[ info ] local.shangcheng.com/home/filedown/test.html [运行时间：1.157221s][吞吐率：0.86req/s] [内存消耗：3,520.30kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/test_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->test[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\filedown\test.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.007943s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.054724s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.004416s ]
+---------------------------------------------------------------
+[ 2018-08-19T18:01:42+08:00 ] 127.0.0.1 GET /home/filedown/index.html
+[ info ] local.shangcheng.com/home/filedown/index.html [运行时间：1.178198s][吞吐率：0.85req/s] [内存消耗：3,169.98kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'referer' => 'http://local.shangcheng.com/home/filedown/test.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->index[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.033113s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.075513s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.007199s ]
+---------------------------------------------------------------
+[ 2018-08-19T18:05:39+08:00 ] 127.0.0.1 GET /home/filedown/test.html
+[ info ] local.shangcheng.com/home/filedown/test.html [运行时间：1.227886s][吞吐率：0.81req/s] [内存消耗：3,520.72kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'test',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/test_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->test[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ VIEW ] D:\www\shangcheng\public/../application/home\view\filedown\test.html [ array (
+  0 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.042595s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.070722s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.004333s ]
+---------------------------------------------------------------
+[ 2018-08-19T18:05:42+08:00 ] 127.0.0.1 GET /home/filedown/index.html
+[ info ] local.shangcheng.com/home/filedown/index.html [运行时间：1.108242s][吞吐率：0.90req/s] [内存消耗：3,170.41kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\shangcheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'filedown',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=8uftc9c2hi8ucdekqthjmb7mc3',
+  'referer' => 'http://local.shangcheng.com/home/filedown/test.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0',
+  'host' => 'local.shangcheng.com',
+)
+[ info ] [ PARAM ] array (
+  '/home/filedown/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Filedown->index[ D:\www\shangcheng\application\home\controller\Filedown.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.021638s ] mysql:host=localhost;port=3306;dbname=tpshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpshop_category` [ RunTime:0.042504s ]
+[ sql ] [ SQL ] SELECT * FROM `tpshop_category` [ RunTime:0.001828s ]
