@@ -1,0 +1,70 @@
+<script>
+    $(function(){
+        $(".delete_manager").click(function(){
+            var now_id=$(this).attr('now_id');
+            var data={'id':now_id};
+            var _this=this;
+           $.ajax({
+             "url":"{:url('admin/user/delete')}",
+             'datatype':"json",
+             'data':data,
+             'type':'post',
+             "success":function(res){
+                if(res.code==10000){
+                    $(_this).closest('tr').remove();
+                }else{
+                    alert("网络错误");
+                    return;
+                }
+             }
+
+           });
+        });
+    });
+</script>
+<!-- 右 -->
+<div class="content">
+    <div class="header">
+        <h1 class="page-title">管理员列表</h1>
+    </div>
+
+    <div class="well">
+        <!-- search button -->
+        <form action="" method="get" class="form-search">
+            <div class="row-fluid" style="text-align: left;">
+            </div>
+        </form>
+    </div>
+    <div class="well">
+        <!-- table -->
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>用户名</th>
+                    <th>邮箱</th>
+                </tr>
+            </thead>
+            <tbody>
+            {foreach $list as $k=>$v}
+                <tr class="success">
+                    <td>{$k+1}</td>
+                    <td>{$v.username}</td>
+                    <td>{$v.email}</td>
+                </tr>
+            {/foreach}
+            </tbody>
+        </table>
+        <!-- pagination -->
+
+        <!--<div class="pagination">-->
+            <!--<ul>-->
+                <!--<li><a href="#">Prev</a></li>-->
+                <!--<li><a href="#">1</a></li>-->
+                <!--<li><a href="#">2</a></li>-->
+                <!--<li><a href="#">3</a></li>-->
+                <!--<li><a href="#">4</a></li>-->
+                <!--<li><a href="#">Next</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    </div>

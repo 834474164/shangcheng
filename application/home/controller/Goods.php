@@ -32,6 +32,7 @@ class Goods extends Base
         //查询商品基本信息
         $goods_info=\app\admin\model\Goods::where('id',$goods_id)->find();
         $type_id=$goods_info->type_id;
+//        $type_id=$goods_info["type_id"];
         //查询属性表
         $attribute=\app\admin\model\Attribute::where('type_id',$type_id)->select();
         //查询商品属性表
@@ -89,33 +90,8 @@ class Goods extends Base
 
 
     //memcache
-    public function setmemcache()
-    {
-//        $options=[
-//            'type'=>'memcache',
-//            'host'=>'localhost',
-//            'port'=>11211
-//        ];
-//        cache($options);
-        cache('name','ok',60);
-        echo "set ok";
-    }
-
-    public function getmemcache()
-    {
-        echo cache("name");
-    }
 
 
-    public function php_info()
-    {
-//        phpinfo();
-        Cache::set("name","xiaoming",0);
-        $name=Cache::get("name");
-        dump($name);
-        cache("age","11");
-        $name=cache("age");
-        dump($name);
-//
-    }
+
+
 }

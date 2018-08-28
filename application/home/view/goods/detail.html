@@ -19,21 +19,61 @@
                 });
 
            //给属性绑定点击事件
-            $('.choose').click(function(){
+            $('.choose_').click(function(){
                var selected=$(this).closest('dl').find('a');
                $.each(selected,function(i,v){
                    $(v).removeClass('selected');
                });
                $(this).addClass('selected');
             });
+
+            //给加号绑定点击事件
+            $('#plus').click(function(){
+               var number=$(this).closest('div').find('input').val();
+               number++;
+               $(this).closest('div').find('input').val(number);
+            });
+
+            //给减号绑定点击事件
+            $('#mins').click(function(){
+               var number=$(this).closest('div').find('input').val();
+               if(number==1){
+                   return;
+               }
+               number=number-1;
+               $(this).closest('div').find('input').val(number);
+            });
+
+            //给添加购物车按钮绑定点击事件
+            $("#add_cart").click(function(){
+                //将商品数量保存到表单中
+                var number=$('#number').val();
+                $('#new_number').val(number);
+                //将商品属性ids保存到表单中
+                var selected_a=$('.selected');
+                var ids="";
+                // console.log(selected_a);
+                $.each(selected_a,function(i,j){
+
+                    if(i==0){
+                        ids+=$(j).attr('attr_id');
+                    }else{
+                        ids+=","+$(j).attr('attr_id');
+                    }
+                });
+                $('#attr_id').val(ids);
+                $('form').submit();
+
+            });
         });
+
     </script>
     <!--组装表单-->
-    <form action="">
-        <input type="text" id="goods_id">
-        <input type="text" id="attr_id">
-        <input type="text" id="goods_price">
-        <input type="text" id="number">
+    <form action="{:url('home/cart/add_cart')}" id="form_table" metchod="post">
+        <input type="text" name="goods_id" id="goods_id" value="{$goods_info.id}">
+        <input type="text" name="goods_attr_ids" id="attr_id">
+        <input type="text" name="goods_price" id="goods_price" value="{$goods_info.goods_price}">
+        <input type="text" name="number" id="new_number">
     </form>
 	<div class="py-container">
 		<div id="item">
@@ -134,7 +174,7 @@
 								</dt>
                                 {foreach $goods_attr as $k=>$g}
                                 {if($g.attr_id eq $a.id)}
-								<dd><a href="javascript:;" class="choose">{$g.attr_value}<span title="点击取消选择">&nbsp;</span></a></dd>
+								<dd><a href="javascript:;" class="choose_" attr_id="{$g.id}">{$g.attr_value}<span title="点击取消选择">&nbsp;</span></a></dd>
                                 {/if}
 								{/foreach}
 							</dl>
@@ -154,7 +194,7 @@
 							<div class="fl">
 								<ul class="btn-choose unstyled">
 									<li>
-										<a href="cart.html" target="_blank" class="sui-btn  btn-danger addshopcar">加入购物车</a>
+										<a href="javascript:;"  class="sui-btn  btn-danger addshopcar" id="add_cart">加入购物车</a>
 									</li>
 								</ul>
 							</div>

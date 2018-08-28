@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"D:\www\shangcheng\public/../application/home\view\goods\detail.html";i:1534227163;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1533544725;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"D:\www\shangcheng\public/../application/home\view\goods\detail.html";i:1535424130;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535422169;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -25,7 +25,11 @@
                 <div class="shortcut">
                     <ul class="fl">
                         <li class="f-item">品优购欢迎您！</li>
-                        <li class="f-item">请<a href="login.html" target="_blank">登录</a>　<span><a href="register.html" target="_blank">免费注册</a></span></li>
+                        <?php if(\think\Session::get('user') != null): ?>
+                        <?php echo \think\Session::get('user.username'); ?><a href="<?php echo url('home/index/logout'); ?>">退出</a>
+                        <?php else: ?>
+                        <li class="f-item">请<a href="<?php echo url('index/loginview'); ?>" target="_blank">登录</a>　<span><a href="register.html" target="_blank">免费注册</a></span></li>
+                        <?php endif; ?>
                     </ul>
                     <ul class="fr">
                         <li class="f-item">我的订单</li>
@@ -171,15 +175,62 @@
                 });
 
            //给属性绑定点击事件
-            $('.choose').click(function(){
+            $('.choose_').click(function(){
                var selected=$(this).closest('dl').find('a');
                $.each(selected,function(i,v){
                    $(v).removeClass('selected');
                });
                $(this).addClass('selected');
             });
+
+            //给加号绑定点击事件
+            $('#plus').click(function(){
+               var number=$(this).closest('div').find('input').val();
+               number++;
+               $(this).closest('div').find('input').val(number);
+            });
+
+            //给减号绑定点击事件
+            $('#mins').click(function(){
+               var number=$(this).closest('div').find('input').val();
+               if(number==1){
+                   return;
+               }
+               number=number-1;
+               $(this).closest('div').find('input').val(number);
+            });
+
+            //给添加购物车按钮绑定点击事件
+            $("#add_cart").click(function(){
+                //将商品数量保存到表单中
+                var number=$('#number').val();
+                $('#new_number').val(number);
+                //将商品属性ids保存到表单中
+                var selected_a=$('.selected');
+                var ids="";
+                // console.log(selected_a);
+                $.each(selected_a,function(i,j){
+
+                    if(i==0){
+                        ids+=$(j).attr('attr_id');
+                    }else{
+                        ids+=","+$(j).attr('attr_id');
+                    }
+                });
+                $('#attr_id').val(ids);
+                $('form').submit();
+
+            });
         });
+
     </script>
+    <!--组装表单-->
+    <form action="<?php echo url('home/cart/add_cart'); ?>" id="form_table" metchod="post">
+        <input type="text" name="goods_id" id="goods_id" value="<?php echo $goods_info['id']; ?>">
+        <input type="text" name="goods_attr_ids" id="attr_id">
+        <input type="text" name="goods_price" id="goods_price" value="<?php echo $goods_info['goods_price']; ?>">
+        <input type="text" name="number" id="new_number">
+    </form>
 	<div class="py-container">
 		<div id="item">
 			<div class="crumb-wrap">
@@ -278,7 +329,7 @@
 									</div>
 								</dt>
                                 <?php foreach($goods_attr as $k=>$g): if(($g['attr_id'] == $a['id'])): ?>
-								<dd><a href="javascript:;" class="choose"><?php echo $g['attr_value']; ?><span title="点击取消选择">&nbsp;</span></a></dd>
+								<dd><a href="javascript:;" class="choose_" attr_id="<?php echo $g['id']; ?>"><?php echo $g['attr_value']; ?><span title="点击取消选择">&nbsp;</span></a></dd>
                                 <?php endif; endforeach; ?>
 							</dl>
                             <?php endforeach; ?>
@@ -297,7 +348,7 @@
 							<div class="fl">
 								<ul class="btn-choose unstyled">
 									<li>
-										<a href="cart.html" target="_blank" class="sui-btn  btn-danger addshopcar">加入购物车</a>
+										<a href="javascript:;"  class="sui-btn  btn-danger addshopcar" id="add_cart">加入购物车</a>
 									</li>
 								</ul>
 							</div>

@@ -26,14 +26,19 @@ class Index extends Base
         $where=['username'=>$username,'password'=>$password];
         $res=\app\home\model\User::where($where)->find();
         if($res){
-            session('user',$username);
-            $this->assign('user',$username);
-            $this->fetch("admin/index/index");
+            session('user',$res);
+            \app\home\model\Cart::to_mysql();
             $this->redirect('home/index/index');
         }else{
             $this->error('网络错误','home/index/loginview');
         }
     }
 
+    //前台用户登出
+    public function logout()
+    {
+        session('user',null);
+        $this->redirect('home/index/index');
+    }
 
 }

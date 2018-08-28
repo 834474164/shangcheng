@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"D:\www\shangcheng\public/../application/home\view\goods\list.html";i:1534145403;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1533544725;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"D:\www\shangcheng\public/../application/home\view\goods\list.html";i:1534145403;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535422169;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -25,7 +25,11 @@
                 <div class="shortcut">
                     <ul class="fl">
                         <li class="f-item">品优购欢迎您！</li>
-                        <li class="f-item">请<a href="login.html" target="_blank">登录</a>　<span><a href="register.html" target="_blank">免费注册</a></span></li>
+                        <?php if(\think\Session::get('user') != null): ?>
+                        <?php echo \think\Session::get('user.username'); ?><a href="<?php echo url('home/index/logout'); ?>">退出</a>
+                        <?php else: ?>
+                        <li class="f-item">请<a href="<?php echo url('index/loginview'); ?>" target="_blank">登录</a>　<span><a href="register.html" target="_blank">免费注册</a></span></li>
+                        <?php endif; ?>
                     </ul>
                     <ul class="fr">
                         <li class="f-item">我的订单</li>
