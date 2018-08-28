@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"D:\www\shangcheng\public/../application/home\view\cart\index.html";i:1535443385;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535422169;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"D:\www\shangcheng\public/../application/home\view\cart\index.html";i:1535446257;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535422169;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -158,7 +158,17 @@
     <link rel="stylesheet" type="text/css" href="/static/home/css/pages-cart.css" />
 
 	<script type="text/javascript" src="/static/home/js/pages/index.js"></script>
-	
+    <script>
+        $(function(){
+            var num=$('.sum');
+            var num_all=0;
+            $.each(num,function(i,j){
+                var a=$(j).html();
+               num_all=num_all+parseInt(a);
+            });
+            $('#total_price').html("¥"+num_all);
+        });
+    </script>
 	<!--主内容-->
 	<div class="cart py-container">
 		<!--All goods-->
@@ -175,7 +185,8 @@
 				</div>
 				<div class="cart-item-list">
 					<div class="cart-body">
-                        <?php foreach($data_cart as $v): ?>
+
+                <?php foreach($data_cart as $v): ?>
 						<div class="cart-list">
 							<ul class="goods-list yui3-g">
 								<li class="yui3-u-1-24">
@@ -183,31 +194,30 @@
 								</li>
 								<li class="yui3-u-6-24">
 									<div class="good-item">
-										<div class="item-img"><img src="/static/home/img/goods.png" /></div>
-										<div class="item-msg">Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存</div>
+										<div class="item-img"><img src="<?php echo $v['goods_logo']; ?>" /></div>
+										<div class="item-msg"><?php echo $v['goods_name']; ?></div>
 									</div>
 								</li>
 								<li class="yui3-u-5-24">
 									<div class="item-txt">颜色MzcBook爱人 银色（Corei5）处理器/8GB内存 尺寸：13.3英寸</div>
 								</li>
-								<li class="yui3-u-1-8"><span class="price">8848.00</span></li>
+								<li class="yui3-u-1-8"><span class="price"><?php echo $v['goods_price']; ?></span></li>
 								<li class="yui3-u-1-8">
 									<a href="javascript:void(0)" class="increment mins">-</a>
-									<input autocomplete="off" type="text" value="1" minnum="1" class="itxt current_number" />
+									<input autocomplete="off" type="text" value="<?php echo $v['number']; ?>" minnum="1" class="itxt current_number" />
 									<a href="javascript:void(0)" class="increment plus">+</a>
 								</li>
-								<li class="yui3-u-1-8"><span class="sum">8848.00</span></li>
+								<li class="yui3-u-1-8"><span class="sum"><?php echo $v['number']*$v['goods_price']; ?></span></li>
 								<li class="yui3-u-1-8">
 									<a href="#none" class="delete">删除</a><br />
 									<a href="#none">移到我的关注</a>
 								</li>
 							</ul>
 						</div>
-                        <?php endforeach; ?>
+                <?php endforeach; ?>
+
 					</div>
 				</div>
-
-
 			</div>
 			<div class="cart-tool">
 				<div class="select-all">
@@ -222,7 +232,7 @@
 				<div class="money-box">
 					<div class="chosed">已选择<span id="total_number">0</span>件商品</div>
 					<div class="sumprice">
-						<span><em>总价（不含运费） ：</em><i id="total_price" class="summoney">¥0</i></span>
+						<span><em>总价（不含运费） ：</em><i id="total_price" class="summoney">¥</i></span>
 						<span><em>已节省：</em><i>-¥0</i></span>
 					</div>
 					<div class="sumbtn">
