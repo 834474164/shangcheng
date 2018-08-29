@@ -70,4 +70,42 @@ class Cart extends Model
         }
         cookie('cart',null);
     }
+
+    public static function show_cart()
+    {
+        if(session('user')){
+            //已登陆的情况
+            $where=session('user.id');
+            //查询购物车数据
+            $data_cart=\app\home\model\Cart::alias('t1')
+                ->field('t1.*,t2.*')
+                ->join('goods t2','t1.goods_id = t2.id','left')
+                ->where(['user_id'=>$where])
+                ->select();
+        }else{
+            //未登陆的情况
+            $data_cart=[];
+            $arr=unserialize(cookie('cart'));
+            //查询所有的商品信息
+            $goods=\app\admin\model\Goods::select();
+            foreach($arr as $k=>$v){
+                $k=explode('-',$k);
+                foreach($goods as $g){
+
+                    $j=['goods_name'=>$g['goods_name'],
+                         'goods_price'=>$g['goods_price'],
+                         'goods_logo'=>$g['goods_logo'],
+                            'id'=>$g['id'],
+                    ];
+                    if($j['id']==$k[0]){
+                        $data_cart[]=array_merge(['goods_id'=>$k[0],'goods_attr_ids'=>$k[1],'number'=>$v],$j);
+                    }
+
+                }
+
+            }
+        }
+        return $data_cart;
+
+    }
 }

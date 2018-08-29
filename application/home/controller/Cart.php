@@ -38,14 +38,10 @@ class Cart extends Base
      */
     public function index()
     {
-        //查询购物车数据
-        $data_cart=\app\home\model\Cart::alias('t1')
-            ->field('t1.*,t2.*')
-            ->join('goods t2','t1.goods_id = t2.id','left')
-            ->select();
+        $data_cart=\app\home\model\Cart::show_cart();
         //查询商品属性表
         $data_attr=\app\admin\model\Goods_attr::select();
-        return view('index',[
+        return view('cart/index',[
             'data_cart'=>$data_cart,
             'data_attr'=>$data_attr,
         ]);
