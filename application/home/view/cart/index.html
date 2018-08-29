@@ -11,8 +11,32 @@
                num_all=num_all+parseInt(a);
             });
             $('#total_price').html("¥"+num_all);
+
+            //给结算按钮绑定点击事件
+            $('#jiesuan').click(function(){
+                var pass_id=$(".row_check");
+                var str="";
+                $.each(pass_id,function(i,j){
+                    if($(j).prop('checked')==true){
+                        if(i==0){
+                            str+=$(j).attr('goods_id');
+                        }else{
+                            str+=","+$(j).attr('goods_id');
+                        }
+                    }
+
+                });
+                $('#pass_id').val(str);
+                $('form').submit();
+            });
         });
+
+
+
     </script>
+    <form action="{:url('home/order/index')}" metchod="post" id="form">
+        <input type="hidden" name="id" id="pass_id">
+    </form>
 	<!--主内容-->
 	<div class="cart py-container">
 		<!--All goods-->
@@ -34,7 +58,7 @@
 						<div class="cart-list">
 							<ul class="goods-list yui3-g">
 								<li class="yui3-u-1-24">
-									<input type="checkbox" class="row_check" name="" id="" value="" />
+									<input goods_id="{$v.id}" type="checkbox" class="row_check" name="" id="" value="" />
 								</li>
 								<li class="yui3-u-6-24">
 									<div class="good-item">
@@ -80,7 +104,7 @@
 						<span><em>已节省：</em><i>-¥0</i></span>
 					</div>
 					<div class="sumbtn">
-						<a class="sum-btn" href="javascript:;" target="_blank">结算</a>
+						<a class="sum-btn" href="javascript:;"  id="jiesuan">结算</a>
 					</div>
 				</div>
 			</div>

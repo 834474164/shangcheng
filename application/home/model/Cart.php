@@ -78,7 +78,7 @@ class Cart extends Model
             $where=session('user.id');
             //查询购物车数据
             $data_cart=\app\home\model\Cart::alias('t1')
-                ->field('t1.*,t2.*')
+                ->field('t1.*,t2.goods_name,t2.goods_price,t2.goods_logo')
                 ->join('goods t2','t1.goods_id = t2.id','left')
                 ->where(['user_id'=>$where])
                 ->select();

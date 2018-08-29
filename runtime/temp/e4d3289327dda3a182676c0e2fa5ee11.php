@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"D:\www\shangcheng\public/../application/home\view\cart\index.html";i:1535532318;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535422169;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"D:\www\shangcheng\public/../application/home\view\order\index.html";i:1535520304;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535422169;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -155,267 +155,223 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="/static/home/css/pages-cart.css" />
+    <link rel="stylesheet" type="text/css" href="/static/home/css/pages-getOrderInfo.css" />
 
-	<script type="text/javascript" src="/static/home/js/pages/index.js"></script>
-    <script>
-        $(function(){
-            var num=$('.sum');
-            var num_all=0;
-            $.each(num,function(i,j){
-                var a=$(j).html();
-               num_all=num_all+parseInt(a);
-            });
-            $('#total_price').html("¥"+num_all);
-
-            //给结算按钮绑定点击事件
-            $('#jiesuan').click(function(){
-                var pass_id=$(".row_check");
-                var str="";
-                $.each(pass_id,function(i,j){
-                    if($(j).prop('checked')==true){
-                        if(i==0){
-                            str+=$(j).attr('goods_id');
-                        }else{
-                            str+=","+$(j).attr('goods_id');
-                        }
-                    }
-
-                });
-                $('#pass_id').val(str);
-                $('form').submit();
-            });
-        });
+	<script type="text/javascript" src="/static/home/js/pages/getOrderInfo.js"></script>
 
 
-
-    </script>
-    <form action="<?php echo url('home/order/index'); ?>" metchod="post" id="form">
-        <input type="hidden" name="id" id="pass_id">
-    </form>
 	<!--主内容-->
 	<div class="cart py-container">
-		<!--All goods-->
-		<div class="allgoods">
-			<h4>全部商品<span>11</span></h4>
-			<div class="cart-main">
-				<div class="yui3-g cart-th">
-					<div class="yui3-u-1-4"><input type="checkbox" name="" id="" value="" /> 全部</div>
-					<div class="yui3-u-1-4">商品</div>
-					<div class="yui3-u-1-8">单价（元）</div>
-					<div class="yui3-u-1-8">数量</div>
-					<div class="yui3-u-1-8">小计（元）</div>
-					<div class="yui3-u-1-8">操作</div>
+		<div class="checkout py-container">
+			<div class="checkout-tit">
+				<h4 class="tit-txt">填写并核对订单信息</h4>
+			</div>
+			<div class="checkout-steps">
+				<!--收件人信息-->
+				<div class="step-tit">
+					<h5>收件人信息<span><a data-toggle="modal" data-target=".edit" data-keyboard="false" class="newadd">新增收货地址</a></span></h5>
 				</div>
-				<div class="cart-item-list">
-					<div class="cart-body">
-
-                <?php foreach($data_cart as $v): ?>
-						<div class="cart-list">
-							<ul class="goods-list yui3-g">
-								<li class="yui3-u-1-24">
-									<input goods_id="<?php echo $v['id']; ?>" type="checkbox" class="row_check" name="" id="" value="" />
-								</li>
-								<li class="yui3-u-6-24">
-									<div class="good-item">
-										<div class="item-img"><img src="<?php echo $v['goods_logo']; ?>" /></div>
-										<div class="item-msg"><?php echo $v['goods_name']; ?></div>
-									</div>
-								</li>
-								<li class="yui3-u-5-24">
-									<div class="item-txt">颜色MzcBook爱人 银色（Corei5）处理器/8GB内存 尺寸：13.3英寸</div>
-								</li>
-								<li class="yui3-u-1-8"><span class="price"><?php echo $v['goods_price']; ?></span></li>
-								<li class="yui3-u-1-8">
-									<a href="javascript:void(0)" class="increment mins">-</a>
-									<input autocomplete="off" type="text" value="<?php echo $v['number']; ?>" minnum="1" class="itxt current_number" />
-									<a href="javascript:void(0)" class="increment plus">+</a>
-								</li>
-								<li class="yui3-u-1-8"><span class="sum"><?php echo $v['number']*$v['goods_price']; ?></span></li>
-								<li class="yui3-u-1-8">
-									<a href="#none" class="delete">删除</a><br />
-									<a href="#none">移到我的关注</a>
-								</li>
-							</ul>
+				<div class="step-cont">
+					<div class="addressInfo">
+						<ul class="addr-detail">
+							<li class="addr-item">
+								<div class="con name selected"><a href="javascript:;" ><em>张默</em><span title="点击取消选择">&nbsp;</span></a></div>
+								<div class="con address">
+									<span class="consignee_name">张默</span>
+									<span class="consignee_address">北京市海淀区三环内 中关村软件园9号楼</span>
+									<span class="consignee_phone">15912343201</span>
+									<span class="base">默认地址</span>
+									<span class="edittext">
+										<a class="edit_address" data-toggle="modal" data-target=".edit" data-keyboard="false" >编辑</a>&nbsp;&nbsp;
+										<a class="delete_address" href="javascript:;">删除</a>
+									</span>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+							<li class="addr-item">
+								<div class="con name"><a href="javascript:;" ><em>张默</em><span title="点击取消选择">&nbsp;</span></a></div>
+								<div class="con address">
+									<span class="consignee_name">张默</span>
+									<span class="consignee_address">北京市海淀区三环内 中关村软件园9号楼</span>
+									<span class="consignee_phone">15912343201</span>
+									<span class="base">默认地址</span>
+									<span class="edittext">
+										<a class="edit_address" data-toggle="modal" data-target=".edit" data-keyboard="false" >编辑</a>&nbsp;&nbsp;
+										<a class="delete_address" href="javascript:;">删除</a>
+									</span>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+							
+						</ul>
+						<!--添加地址-->
+                          <div  tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade edit">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" data-dismiss="modal" aria-hidden="true" class="sui-close">×</button>
+						        <h4 id="myModalLabel" class="modal-title">添加收货地址</h4>
+						      </div>
+						      <div class="modal-body">
+						      	<form action="" class="sui-form form-horizontal">
+						      		 <div class="control-group">
+									    <label class="control-label">收货人：</label>
+									    <div class="controls">
+									      <input type="text" class="input-medium">
+									    </div>
+									  </div>
+									   
+									   <div class="control-group">
+									    <label class="control-label">详细地址：</label>
+									    <div class="controls">
+									      <input type="text" class="input-large">
+									    </div>
+									  </div>
+									   <div class="control-group">
+									    <label class="control-label">联系电话：</label>
+									    <div class="controls">
+									      <input type="text" class="input-medium">
+									    </div>
+									  </div>
+									   <div class="control-group">
+									    <label class="control-label">邮箱：</label>
+									    <div class="controls">
+									      <input type="text" class="input-medium">
+									    </div>
+									  </div>
+									   <div class="control-group">
+									    <label class="control-label">地址别名：</label>
+									    <div class="controls">
+									      <input type="text" class="input-medium">
+									    </div>
+									    <div class="othername">
+									    	建议填写常用地址：<a href="#" class="sui-btn btn-default">家里</a>　<a href="#" class="sui-btn btn-default">父母家</a>　<a href="#" class="sui-btn btn-default">公司</a>
+									    </div>
+									  </div>
+									  
+						      	</form>
+						      	
+						      	
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" data-ok="modal" class="sui-btn btn-primary btn-large">确定</button>
+						        <button type="button" data-dismiss="modal" class="sui-btn btn-default btn-large">取消</button>
+						      </div>
+						    </div>
+						  </div>
 						</div>
-                <?php endforeach; ?>
-
+						 <!--确认地址-->
+					</div>
+					<div class="hr"></div>
+					<div class="recommendAddr">
+						<ul class="addr-detail">
+							<li class="addr-item">
+								<div class="con name"><a href="javascript:;" class="selected">匹配自提点<span title="点击取消选择">&nbsp;</a></div>
+								<div class="con address">时代思远书店 中关村软件园9号楼时代思远书店</div>
+							</li>
+						</ul>
 					</div>
 				</div>
-			</div>
-			<div class="cart-tool">
-				<div class="select-all">
-					<input type="checkbox" class="check_all" name="" value="" />
-					<span>全选</span>
-				</div>
-				<div class="option">
-					<a href="#none">删除选中的商品</a>
-					<a href="#none">移到我的关注</a>
-					<a href="#none">清除下柜商品</a>
-				</div>
-				<div class="money-box">
-					<div class="chosed">已选择<span id="total_number">0</span>件商品</div>
-					<div class="sumprice">
-						<span><em>总价（不含运费） ：</em><i id="total_price" class="summoney">¥</i></span>
-						<span><em>已节省：</em><i>-¥0</i></span>
+				<div class="hr"></div>
+				<!--支付和送货-->
+				<div class="payshipInfo">
+					<div class="step-tit">
+						<h5>支付方式</h5>
 					</div>
-					<div class="sumbtn">
-						<a class="sum-btn" href="javascript:;"  id="jiesuan">结算</a>
+					<div class="step-cont">
+						<ul class="payType">
+							<li class="selected" pay_type="alipay">支付宝<span title="点击取消选择"></span></li>
+							<li pay_type="wechat">微信付款<span title="点击取消选择"></span></li>
+							<li pay_type="card">银联<span title="点击取消选择"></span></li>
+							<li pay_type="cash">货到付款<span title="点击取消选择"></span></li>
+						</ul>
 					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="deled">
-				<span>已删除商品，您可以重新购买或加关注：</span>
-				<div class="cart-list del">
-					<ul class="goods-list yui3-g">
-						<li class="yui3-u-1-2">
-							<div class="good-item">
-								<div class="item-msg">Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存</div>
-							</div>
-						</li>
-						<li class="yui3-u-1-6"><span class="price">8848.00</span></li>
-						<li class="yui3-u-1-6">
-							<span class="number">1</span>
-						</li>
-						<li class="yui3-u-1-8">
-							<a href="#none">重新购买</a>
-							<a href="#none">移到我的关注</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="liked">
-				<ul class="sui-nav nav-tabs">
-					<li class="active">
-						<a href="#index" data-toggle="tab">猜你喜欢</a>
-					</li>
-					<li>
-						<a href="#profile" data-toggle="tab">特惠换购</a>
-					</li>
-				</ul>
-				<div class="clearfix"></div>
-				<div class="tab-content">
-					<div id="index" class="tab-pane active">
-						<div id="myCarousel" data-ride="carousel" data-interval="4000" class="sui-carousel slide">
-							<div class="carousel-inner">
-								<div class="active item">
+					<div class="hr"></div>
+					<div class="step-tit">
+						<h5>送货清单</h5>
+					</div>
+					<div class="step-cont">
+						<ul class="send-detail">
+							<li>
+								<div class="sendType">
+									<span>配送方式：</span>
 									<ul>
 										<li>
-											<img src="/static/home/img/like1.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
-										</li>
-										<li>
-											<img src="/static/home/img/like2.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
-										</li>
-										<li>
-											<img src="/static/home/img/like3.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
-										</li>
-										<li>
-											<img src="/static/home/img/like4.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
+											<div class="con express">天天快递</div>
+											<div class="con delivery">配送时间：预计8月10日（周三）09:00-15:00送达</div>
 										</li>
 									</ul>
 								</div>
-								<div class="item">
-									<ul>
-										<li>
-											<img src="/static/home/img/like1.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
+								<div class="sendGoods">
+									<span>商品清单：</span>
+									<ul class="yui3-g">
+										<li class="yui3-u-1-6">
+											<span><img src="../img/goods.png"/></span>
 										</li>
-										<li>
-											<img src="/static/home/img/like2.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
+										<li class="yui3-u-7-12">
+											<div class="desc">Apple iPhone 6s (A1700) 64G 玫瑰金色 移动联通电信4G手机硅胶透明防摔软壳 本色系列</div>
+											<div class="seven">7天无理由退货</div>
 										</li>
-										<li>
-											<img src="/static/home/img/like3.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
+										<li class="yui3-u-1-12">
+											<div class="price">￥5399.00</div>
 										</li>
-										<li>
-											<img src="/static/home/img/like4.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
+										<li class="yui3-u-1-12">
+											<div class="num">X1</div>
+										</li>
+										<li class="yui3-u-1-12">
+											<div class="exit">有货</div>
 										</li>
 									</ul>
 								</div>
-							</div>
-							<a href="#myCarousel" data-slide="prev" class="carousel-control left">‹</a>
-							<a href="#myCarousel" data-slide="next" class="carousel-control right">›</a>
-						</div>
+							</li>
+							<li></li>
+							<li></li>
+						</ul>
 					</div>
-					<div id="profile" class="tab-pane">
-						<p>特惠选购</p>
+					<div class="hr"></div>
+				</div>
+				<div class="linkInfo">
+					<div class="step-tit">
+						<h5>发票信息</h5>
+					</div>
+					<div class="step-cont">
+						<span>普通发票（电子）</span>
+						<span>个人</span>
+						<span>明细</span>
+					</div>
+				</div>
+				<div class="cardInfo">
+					<div class="step-tit">
+						<h5>使用优惠/抵用</h5>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="order-summary">
+			<div class="static fr">
+				<div class="list">
+					<span><i class="number">1</i>件商品，总商品金额</span>
+					<em class="allprice">¥5399.00</em>
+				</div>
+				<div class="list">
+					<span>返现：</span>
+					<em class="money">0.00</em>
+				</div>
+				<div class="list">
+					<span>运费：</span>
+					<em class="transport">0.00</em>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix trade">
+			<div class="fc-price">应付金额:　<span class="price">¥5399.00</span></div>
+			<div class="fc-receiverInfo">寄送至:北京市海淀区三环内 中关村软件园9号楼 收货人：某某某 159****3201</div>
+		</div>
+		<div class="submit">
+			<a class="sui-btn btn-danger btn-xlarge" href="pay.html">提交订单</a>
+		</div>
 	</div>
-
+	
 
 
 
