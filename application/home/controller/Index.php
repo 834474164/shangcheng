@@ -28,6 +28,10 @@ class Index extends Base
         if($res){
             session('user',$res);
             \app\home\model\Cart::to_mysql();
+            if(session('back_url')){
+                $this->redirect(session('back_url'));
+                return;
+            }
             $this->redirect('home/index/index');
         }else{
             $this->error('网络错误','home/index/loginview');

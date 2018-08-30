@@ -4,7 +4,7 @@ namespace app\home\model;
 
 use think\Model;
 
-class Order extends Model
+class Order_goods extends Model
 {
-
+    //
 }

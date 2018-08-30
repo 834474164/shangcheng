@@ -89,7 +89,7 @@ class Goods extends Base
     }
 
 
-    //memcache
+
 
 
 

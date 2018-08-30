@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"D:\www\shangcheng\public/../application/home\view\order\index.html";i:1535520304;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535422169;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"D:\www\shangcheng\public/../application/home\view\order\index.html";i:1535611384;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535422169;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -159,8 +159,38 @@
 
 	<script type="text/javascript" src="/static/home/js/pages/getOrderInfo.js"></script>
 
+    <script>
+        $(function(){
+           //计算商品总数量
+            var total_num=0;
+            var total_price=0;
+            var price=$('._price');
+            $.each(price,function(i,j){
 
+                total_num+=parseInt($(j).closest('ul').attr('goods_num'));
+                total_price+=($(j).closest('ul').attr('goods_num'))*($(j).closest('ul').attr('goods_price'));
+            });
+            $('.number').html(total_num);
+            $('.allprice').html(total_price);
+            $('.true_price').html(total_price);
+
+            //给提交按钮绑定点击事件
+            $('#commit_order').click(function(){
+                var address_id=$('.name');
+                $.each(address_id,function(i,j){
+                    if($(j).hasClass('selected')){
+                        $('#address_id').val($(j).attr('address_id'));
+                    }
+                });
+               $('#form_order').submit();
+            });
+        });
+    </script>
 	<!--主内容-->
+    <form action="<?php echo url('home/order/commit_order'); ?>" method="post" id="form_order">
+        <input type="hidden" name="address_id" id="address_id">
+        <input type="hidden" name="ids" value="<?php echo $ids; ?>">
+    </form>
 	<div class="cart py-container">
 		<div class="checkout py-container">
 			<div class="checkout-tit">
@@ -174,12 +204,13 @@
 				<div class="step-cont">
 					<div class="addressInfo">
 						<ul class="addr-detail">
+                            <?php foreach($address as $k=>$v): ?>
 							<li class="addr-item">
-								<div class="con name selected"><a href="javascript:;" ><em>张默</em><span title="点击取消选择">&nbsp;</span></a></div>
+								<div class="con name <?php if(($k == 0)): ?>selected<?php endif; ?>" address_id="<?php echo $v['id']; ?>"><a href="javascript:;" ><em>张默</em><span title="点击取消选择">&nbsp;</span></a></div>
 								<div class="con address">
-									<span class="consignee_name">张默</span>
-									<span class="consignee_address">北京市海淀区三环内 中关村软件园9号楼</span>
-									<span class="consignee_phone">15912343201</span>
+									<span class="consignee_name"><?php echo $v['consignee']; ?></span>
+									<span class="consignee_address"><?php echo $v['address']; ?></span>
+									<span class="consignee_phone"><?php echo $v['phone']; ?></span>
 									<span class="base">默认地址</span>
 									<span class="edittext">
 										<a class="edit_address" data-toggle="modal" data-target=".edit" data-keyboard="false" >编辑</a>&nbsp;&nbsp;
@@ -188,21 +219,7 @@
 								</div>
 								<div class="clearfix"></div>
 							</li>
-							<li class="addr-item">
-								<div class="con name"><a href="javascript:;" ><em>张默</em><span title="点击取消选择">&nbsp;</span></a></div>
-								<div class="con address">
-									<span class="consignee_name">张默</span>
-									<span class="consignee_address">北京市海淀区三环内 中关村软件园9号楼</span>
-									<span class="consignee_phone">15912343201</span>
-									<span class="base">默认地址</span>
-									<span class="edittext">
-										<a class="edit_address" data-toggle="modal" data-target=".edit" data-keyboard="false" >编辑</a>&nbsp;&nbsp;
-										<a class="delete_address" href="javascript:;">删除</a>
-									</span>
-								</div>
-								<div class="clearfix"></div>
-							</li>
-							
+							<?php endforeach; ?>
 						</ul>
 						<!--添加地址-->
                           <div  tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade edit">
@@ -264,15 +281,8 @@
 					</div>
 					<div class="hr"></div>
 					<div class="recommendAddr">
-						<ul class="addr-detail">
-							<li class="addr-item">
-								<div class="con name"><a href="javascript:;" class="selected">匹配自提点<span title="点击取消选择">&nbsp;</a></div>
-								<div class="con address">时代思远书店 中关村软件园9号楼时代思远书店</div>
-							</li>
-						</ul>
 					</div>
 				</div>
-				<div class="hr"></div>
 				<!--支付和送货-->
 				<div class="payshipInfo">
 					<div class="step-tit">
@@ -281,9 +291,6 @@
 					<div class="step-cont">
 						<ul class="payType">
 							<li class="selected" pay_type="alipay">支付宝<span title="点击取消选择"></span></li>
-							<li pay_type="wechat">微信付款<span title="点击取消选择"></span></li>
-							<li pay_type="card">银联<span title="点击取消选择"></span></li>
-							<li pay_type="cash">货到付款<span title="点击取消选择"></span></li>
 						</ul>
 					</div>
 					<div class="hr"></div>
@@ -304,24 +311,23 @@
 								</div>
 								<div class="sendGoods">
 									<span>商品清单：</span>
-									<ul class="yui3-g">
+                                    <?php foreach($bygoods as $v): ?>
+									<ul class="yui3-g" goods_price="<?php echo $v['goods_price']; ?>" goods_num="<?php echo $v['number']; ?>">
 										<li class="yui3-u-1-6">
-											<span><img src="../img/goods.png"/></span>
+											<span><img src="<?php echo $v['goods_logo']; ?>"/></span>
 										</li>
 										<li class="yui3-u-7-12">
-											<div class="desc">Apple iPhone 6s (A1700) 64G 玫瑰金色 移动联通电信4G手机硅胶透明防摔软壳 本色系列</div>
+											<div class="desc"><?php echo $v['goods_name']; ?></div>
 											<div class="seven">7天无理由退货</div>
 										</li>
 										<li class="yui3-u-1-12">
-											<div class="price">￥5399.00</div>
+											<div class="_price">￥<?php echo $v['goods_price']; ?></div>
 										</li>
 										<li class="yui3-u-1-12">
-											<div class="num">X1</div>
-										</li>
-										<li class="yui3-u-1-12">
-											<div class="exit">有货</div>
+											<div class="num">x<?php echo $v['number']; ?></div>
 										</li>
 									</ul>
+                                    <?php endforeach; ?>
 								</div>
 							</li>
 							<li></li>
@@ -364,11 +370,11 @@
 			</div>
 		</div>
 		<div class="clearfix trade">
-			<div class="fc-price">应付金额:　<span class="price">¥5399.00</span></div>
+			<div class="fc-price">应付金额:　<span class="true_price">¥5399.00</span></div>
 			<div class="fc-receiverInfo">寄送至:北京市海淀区三环内 中关村软件园9号楼 收货人：某某某 159****3201</div>
 		</div>
 		<div class="submit">
-			<a class="sui-btn btn-danger btn-xlarge" href="pay.html">提交订单</a>
+			<a class="sui-btn btn-danger btn-xlarge" href="javascript:;" id="commit_order">提交订单</a>
 		</div>
 	</div>
 	
