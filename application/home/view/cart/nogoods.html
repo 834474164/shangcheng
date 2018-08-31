@@ -1,111 +1,19 @@
 
     <link rel="stylesheet" type="text/css" href="/static/home/css/pages-cart.css" />
 
+
 	<script type="text/javascript" src="/static/home/js/pages/index.js"></script>
-    <script>
-        $(function(){
-            var num=$('.sum');
-            var num_all=0;
-            $.each(num,function(i,j){
-                var a=$(j).html();
-               num_all=num_all+parseInt(a);
-            });
-            $('#total_price').html("¥"+num_all);
-
-            //给结算按钮绑定点击事件
-            $('#jiesuan').click(function(){
-                var pass_id=$(".row_check");
-                var str="";
-                $.each(pass_id,function(i,j){
-                    if($(j).prop('checked')==true){
-                        if(i==0){
-                            str+=$(j).attr('goods_id');
-                        }else{
-                            str+=","+$(j).attr('goods_id');
-                        }
-                    }
-
-                });
-                $('#pass_id').val(str);
-                $('form').submit();
-            });
-        });
-
-
-
-    </script>
-    <form action="{:url('home/order/index')}" metchod="post" id="form">
-        <input type="hidden" name="id" id="pass_id">
-    </form>
+	</div>
+	
 	<!--主内容-->
 	<div class="cart py-container">
 		<!--All goods-->
 		<div class="allgoods">
-			<h4>全部商品<span>11</span></h4>
-			<div class="cart-main">
-				<div class="yui3-g cart-th">
-					<div class="yui3-u-1-4"><input type="checkbox" name="" id="" value="" /> 全部</div>
-					<div class="yui3-u-1-4">商品</div>
-					<div class="yui3-u-1-8">单价（元）</div>
-					<div class="yui3-u-1-8">数量</div>
-					<div class="yui3-u-1-8">小计（元）</div>
-					<div class="yui3-u-1-8">操作</div>
-				</div>
-				<div class="cart-item-list">
-					<div class="cart-body">
-                {foreach $data_cart as $v}
-						<div class="cart-list">
-							<ul class="goods-list yui3-g">
-								<li class="yui3-u-1-24">
-									<input goods_id="{$v.id}" type="checkbox" class="row_check" name="" id="" value="" />
-								</li>
-								<li class="yui3-u-6-24">
-									<div class="good-item">
-										<div class="item-img"><img src="{$v.goods_logo}" /></div>
-										<div class="item-msg">{$v.goods_name}</div>
-									</div>
-								</li>
-								<li class="yui3-u-5-24">
-									<div class="item-txt">颜色MzcBook爱人 银色（Corei5）处理器/8GB内存 尺寸：13.3英寸</div>
-								</li>
-								<li class="yui3-u-1-8"><span class="price">{$v.goods_price}</span></li>
-								<li class="yui3-u-1-8">
-									<a href="javascript:void(0)" class="increment mins">-</a>
-									<input autocomplete="off" type="text" value="{$v.number}" minnum="1" class="itxt current_number" />
-									<a href="javascript:void(0)" class="increment plus">+</a>
-								</li>
-								<li class="yui3-u-1-8"><span class="sum">{$v.number*$v.goods_price}</span></li>
-								<li class="yui3-u-1-8">
-									<a href="#none" class="delete">删除</a><br />
-									<a href="#none">移到我的关注</a>
-								</li>
-							</ul>
-						</div>
-                {/foreach}
-					</div>
-				</div>
-			</div>
-			<div class="cart-tool">
-				<div class="select-all">
-					<input type="checkbox" class="check_all" name="" value="" />
-					<span>全选</span>
-				</div>
-				<div class="option">
-					<a href="#none">删除选中的商品</a>
-					<a href="#none">移到我的关注</a>
-					<a href="#none">清除下柜商品</a>
-				</div>
-				<div class="money-box">
-					<div class="chosed">已选择<span id="total_number">0</span>件商品</div>
-					<div class="sumprice">
-						<span><em>总价（不含运费） ：</em><i id="total_price" class="summoney">¥</i></span>
-						<span><em>已节省：</em><i>-¥0</i></span>
-					</div>
-					<div class="sumbtn">
-						<a class="sum-btn" href="javascript:;"  id="jiesuan">结算</a>
-					</div>
-				</div>
-			</div>
+            <div id="nogoods">
+                <span>
+                    购物车还没有任何商品!
+                </span>
+            </div>
 			<div class="clearfix"></div>
 			<div class="deled">
 				<span>已删除商品，您可以重新购买或加关注：</span>
@@ -257,4 +165,3 @@
 			</div>
 		</div>
 	</div>
-

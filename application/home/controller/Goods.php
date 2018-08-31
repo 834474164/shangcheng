@@ -84,8 +84,6 @@ class Goods extends Base
             file_put_contents($dir,$str);
             header('location:http://local.shangcheng.com/static.html');
         }
-
-
     }
 
 

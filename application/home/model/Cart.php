@@ -82,10 +82,16 @@ class Cart extends Model
                 ->join('goods t2','t1.goods_id = t2.id','left')
                 ->where(['user_id'=>$where])
                 ->select();
+        if(!$data_cart){
+            return "no";
+        }
         }else{
             //未登陆的情况
             $data_cart=[];
             $arr=unserialize(cookie('cart'));
+            if($arr==null){
+                return 'no';
+            }
             //查询所有的商品信息
             $goods=\app\admin\model\Goods::select();
             foreach($arr as $k=>$v){

@@ -32,18 +32,26 @@ class Cart extends Base
     }
 
     /**
-     * 添加购物车成功
+     * 购物车商品展示
      *
      * @return \think\Response
      */
     public function index()
     {
         $data_cart=\app\home\model\Cart::show_cart();
+        if($data_cart=="no"){
+            $this->redirect('home/cart/nogoods');
+        }
         //查询商品属性表
         $data_attr=\app\admin\model\Goods_attr::select();
         return view('cart/index',[
             'data_cart'=>$data_cart,
             'data_attr'=>$data_attr,
         ]);
+    }
+
+    public function nogoods()
+    {
+        return view();
     }
 }

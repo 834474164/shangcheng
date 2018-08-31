@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"D:\www\shangcheng\public/../application/home\view\cart\nogoods.html";i:1535680975;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535681207;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -6,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
     <title>品优购，优质！优质！</title>
 
-    <link rel="stylesheet" type="text/css" href="{:config('home_css')}all.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo config('home_css'); ?>all.css" />
 
 
-    <script type="text/javascript" src="{:config('home_js')}all.js"></script>
+    <script type="text/javascript" src="<?php echo config('home_js'); ?>all.js"></script>
 
 </head>
 
@@ -24,11 +25,11 @@
                 <div class="shortcut">
                     <ul class="fl">
                         <li class="f-item">品优购欢迎您！</li>
-                        {if condition="$Think.session.user neq null"}
-                        {$Think.session.user.username}<a href="{:url('home/index/logout')}">退出</a>
-                        {else}
-                        <li class="f-item">请<a href="{:url('index/loginview')}" target="_blank">登录</a>　<span><a href="register.html" target="_blank">免费注册</a></span></li>
-                        {/if}
+                        <?php if(\think\Session::get('user') != null): ?>
+                        <?php echo \think\Session::get('user.username'); ?><a href="<?php echo url('home/index/logout'); ?>">退出</a>
+                        <?php else: ?>
+                        <li class="f-item">请<a href="<?php echo url('index/loginview'); ?>" target="_blank">登录</a>　<span><a href="register.html" target="_blank">免费注册</a></span></li>
+                        <?php endif; ?>
                     </ul>
                     <ul class="fr">
                         <li class="f-item">我的订单</li>
@@ -89,7 +90,7 @@
                         <div class="fr shopcar">
                             <div class="show-shopcar" id="shopcar">
                                 <span class="car"></span>
-                                <a class="sui-btn btn-default btn-xlarge" href="{:url('home/cart/index')}" target="_blank">
+                                <a class="sui-btn btn-default btn-xlarge" href="<?php echo url('home/cart/index'); ?>" target="_blank">
                                     <span>我的购物车</span>
                                     <i class="shopnum">0</i>
                                 </a>
@@ -109,25 +110,25 @@
                         <div class="sort">
                             <div class="all-sort-list2">
 
-                                {foreach $cates as $one}
+                                <?php foreach($cates as $one): ?>
                                 <div class="item">
-                                    <h3><a href="">{$one.cate_name}</a></h3>
+                                    <h3><a href=""><?php echo $one['cate_name']; ?></a></h3>
                                     <div class="item-list clearfix">
                                         <div class="subitem">
-                                            {foreach $one.son as $two}
+                                            <?php foreach($one['son'] as $two): ?>
                                             <dl class="fore1">
-                                                <dt><a href="">{$two.cate_name}</a></dt>
+                                                <dt><a href=""><?php echo $two['cate_name']; ?></a></dt>
                                                 <dd>
-                                                    {foreach $two.son as $three}
-                                                    <em><a href="{:url('home/goods/list',['cate_id'=>$three.id])}">{$three.cate_name}</a></em>
-                                                    {/foreach}
+                                                    <?php foreach($two['son'] as $three): ?>
+                                                    <em><a href="<?php echo url('home/goods/list',['cate_id'=>$three['id']]); ?>"><?php echo $three['cate_name']; ?></a></em>
+                                                    <?php endforeach; ?>
                                                 </dd>
                                             </dl>
-                                            {/foreach}
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
                                 </div>
-                                {/foreach}
+                                <?php endforeach; ?>
 
                             </div>
                         </div>
@@ -153,7 +154,174 @@
 </div>
 
 
-{__CONTENT__}
+
+    <link rel="stylesheet" type="text/css" href="/static/home/css/pages-cart.css" />
+
+
+	<script type="text/javascript" src="/static/home/js/pages/index.js"></script>
+	</div>
+	
+	<!--主内容-->
+	<div class="cart py-container">
+		<!--All goods-->
+		<div class="allgoods">
+            <div id="nogoods">
+                <span>
+                    购物车还没有任何商品!
+                </span>
+            </div>
+			<div class="clearfix"></div>
+			<div class="deled">
+				<span>已删除商品，您可以重新购买或加关注：</span>
+				<div class="cart-list del">
+					<ul class="goods-list yui3-g">
+						<li class="yui3-u-1-2">
+							<div class="good-item">
+								<div class="item-msg">Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存</div>
+							</div>
+						</li>
+						<li class="yui3-u-1-6"><span class="price">8848.00</span></li>
+						<li class="yui3-u-1-6">
+							<span class="number">1</span>
+						</li>
+						<li class="yui3-u-1-8">
+							<a href="#none">重新购买</a>
+							<a href="#none">移到我的关注</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="liked">
+				<ul class="sui-nav nav-tabs">
+					<li class="active">
+						<a href="#index" data-toggle="tab">猜你喜欢</a>
+					</li>
+					<li>
+						<a href="#profile" data-toggle="tab">特惠换购</a>
+					</li>
+				</ul>
+				<div class="clearfix"></div>
+				<div class="tab-content">
+					<div id="index" class="tab-pane active">
+						<div id="myCarousel" data-ride="carousel" data-interval="4000" class="sui-carousel slide">
+							<div class="carousel-inner">
+								<div class="active item">
+									<ul>
+										<li>
+											<img src="/static/home/img/like1.png" />
+											<div class="intro">
+												<i>Apple苹果iPhone 6s (A1699)</i>
+											</div>
+											<div class="money">
+												<span>$29.00</span>
+											</div>
+											<div class="incar">
+												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
+											</div>
+										</li>
+										<li>
+											<img src="/static/home/img/like2.png" />
+											<div class="intro">
+												<i>Apple苹果iPhone 6s (A1699)</i>
+											</div>
+											<div class="money">
+												<span>$29.00</span>
+											</div>
+											<div class="incar">
+												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
+											</div>
+										</li>
+										<li>
+											<img src="/static/home/img/like3.png" />
+											<div class="intro">
+												<i>Apple苹果iPhone 6s (A1699)</i>
+											</div>
+											<div class="money">
+												<span>$29.00</span>
+											</div>
+											<div class="incar">
+												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
+											</div>
+										</li>
+										<li>
+											<img src="/static/home/img/like4.png" />
+											<div class="intro">
+												<i>Apple苹果iPhone 6s (A1699)</i>
+											</div>
+											<div class="money">
+												<span>$29.00</span>
+											</div>
+											<div class="incar">
+												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="item">
+									<ul>
+										<li>
+											<img src="/static/home/img/like1.png" />
+											<div class="intro">
+												<i>Apple苹果iPhone 6s (A1699)</i>
+											</div>
+											<div class="money">
+												<span>$29.00</span>
+											</div>
+											<div class="incar">
+												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
+											</div>
+										</li>
+										<li>
+											<img src="/static/home/img/like2.png" />
+											<div class="intro">
+												<i>Apple苹果iPhone 6s (A1699)</i>
+											</div>
+											<div class="money">
+												<span>$29.00</span>
+											</div>
+											<div class="incar">
+												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
+											</div>
+										</li>
+										<li>
+											<img src="/static/home/img/like3.png" />
+											<div class="intro">
+												<i>Apple苹果iPhone 6s (A1699)</i>
+											</div>
+											<div class="money">
+												<span>$29.00</span>
+											</div>
+											<div class="incar">
+												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
+											</div>
+										</li>
+										<li>
+											<img src="/static/home/img/like4.png" />
+											<div class="intro">
+												<i>Apple苹果iPhone 6s (A1699)</i>
+											</div>
+											<div class="money">
+												<span>$29.00</span>
+											</div>
+											<div class="incar">
+												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<a href="#myCarousel" data-slide="prev" class="carousel-control left">‹</a>
+							<a href="#myCarousel" data-slide="next" class="carousel-control right">›</a>
+						</div>
+					</div>
+					<div id="profile" class="tab-pane">
+						<p>特惠选购</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 
 <!-- 底部栏位 -->
@@ -265,7 +433,7 @@
                     </div>
                     <div class="yui3-u-1-6">
                         <h4>帮助中心</h4>
-                        <img src="{:config('home_img')}wx_cz.jpg">
+                        <img src="<?php echo config('home_img'); ?>wx_cz.jpg">
                     </div>
                 </div>
             </div>
@@ -298,7 +466,7 @@
                 <!-- 购物车 -->
                 <div style="visibility: hidden;" class="J-content toolbar-panel tbar-panel-cart toolbar-animate-out">
                     <h3 class="tbar-panel-header J-panel-header">
-                        <a href="{:url('home/cart/index')}" class="title"><i></i><em class="title">购物车</em></a>
+                        <a href="<?php echo url('home/cart/index'); ?>" class="title"><i></i><em class="title">购物车</em></a>
                         <span class="close-panel J-close" onclick="cartPanelView.tbar_panel_close('cart');" ></span>
                     </h3>
                     <div class="tbar-panel-main">
