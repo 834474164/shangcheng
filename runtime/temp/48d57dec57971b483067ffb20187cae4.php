@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"D:\www\shangcheng\public/../application/home\view\index\index.html";i:1533527505;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535681207;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"D:\www\shangcheng\public/../application/home\view\index\index.html";i:1533527505;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535682313;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -92,11 +92,7 @@
                                 <span class="car"></span>
                                 <a class="sui-btn btn-default btn-xlarge" href="<?php echo url('home/cart/index'); ?>" target="_blank">
                                     <span>我的购物车</span>
-                                    <i class="shopnum">0</i>
                                 </a>
-                                <div class="clearfix shopcarlist" id="shopcarlist" style="display:none">
-                                    <p>"啊哦，你的购物车还没有商品哦！"</p>
-                                </div>
                             </div>
                         </div>
                     </div>

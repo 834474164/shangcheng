@@ -86,6 +86,13 @@ class Goods extends Base
         }
     }
 
+    public function test()
+    {
+        $arr['a']=10;
+        $arr['b']=12;
+        dump($arr);die;
+    }
+
 
 
 

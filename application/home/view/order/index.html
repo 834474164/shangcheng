@@ -50,7 +50,7 @@
 						<ul class="addr-detail">
                             {foreach $address as $k=>$v}
 							<li class="addr-item">
-								<div class="con name {if($k eq 0)}selected{/if}" address_id="{$v.id}"><a href="javascript:;" ><em>张默</em><span title="点击取消选择">&nbsp;</span></a></div>
+								<div class="con name {if($k eq 0)}selected{/if}" address_id="{$v.id}"><a href="javascript:;" ><em>{$v.consignee}</em><span title="点击取消选择">&nbsp;</span></a></div>
 								<div class="con address">
 									<span class="consignee_name">{$v.consignee}</span>
 									<span class="consignee_address">{$v.address}</span>

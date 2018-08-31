@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"D:\www\shangcheng\public/../application/home\view\goods\detail.html";i:1535424130;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535422169;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"D:\www\shangcheng\public/../application/home\view\goods\detail.html";i:1535424130;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535682313;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -90,13 +90,9 @@
                         <div class="fr shopcar">
                             <div class="show-shopcar" id="shopcar">
                                 <span class="car"></span>
-                                <a class="sui-btn btn-default btn-xlarge" href="cart.html" target="_blank">
+                                <a class="sui-btn btn-default btn-xlarge" href="<?php echo url('home/cart/index'); ?>" target="_blank">
                                     <span>我的购物车</span>
-                                    <i class="shopnum">0</i>
                                 </a>
-                                <div class="clearfix shopcarlist" id="shopcarlist" style="display:none">
-                                    <p>"啊哦，你的购物车还没有商品哦！"</p>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -1003,7 +999,7 @@
                 <!-- 购物车 -->
                 <div style="visibility: hidden;" class="J-content toolbar-panel tbar-panel-cart toolbar-animate-out">
                     <h3 class="tbar-panel-header J-panel-header">
-                        <a href="" class="title"><i></i><em class="title">购物车</em></a>
+                        <a href="<?php echo url('home/cart/index'); ?>" class="title"><i></i><em class="title">购物车</em></a>
                         <span class="close-panel J-close" onclick="cartPanelView.tbar_panel_close('cart');" ></span>
                     </h3>
                     <div class="tbar-panel-main">

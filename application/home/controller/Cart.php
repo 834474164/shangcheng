@@ -50,6 +50,11 @@ class Cart extends Base
         ]);
     }
 
+    /**
+     * 购物车是空的
+     *
+     * @return \think\Response
+     */
     public function nogoods()
     {
         return view();

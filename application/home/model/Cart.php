@@ -33,6 +33,7 @@ class Cart extends Model
                 cookie("cart",serialize($arr_cart));
                 return;
             }
+            $arr_cart=unserialize(cookie('cart'));
             $arr_cart[$goods_id."-".$goods_attr_ids]=$number;
             cookie('cart',serialize($arr_cart));
         }

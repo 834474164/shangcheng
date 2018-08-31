@@ -19,6 +19,9 @@ class Order extends Base
             $this->redirect('home/index/loginview');
         }
         $ids=request()->param('id');
+        if($ids==null){
+            $this->error('请选择想购买的商品再提交','home/cart/index');
+        }
         //查询地址信息
         $user_id=session('user.id');
         $address=\app\home\model\Address::where(['user_id'=>$user_id])->select();
@@ -74,7 +77,11 @@ class Order extends Base
         foreach($bygoods as $v){
             $order_amount=$v['number']*$v['goods_price']+$order_amount;
 
+
         }
+//        if($order_amount==0){
+//            $this->error('请选择需要提交的商品','home/cart/index');
+//        }
         $order=[
             'order_sn'=>$order_sn,
             'user_id'=>$user_id,
@@ -101,8 +108,20 @@ class Order extends Base
             ];
             //添加订单商品数据
             $result=\app\home\model\Order_goods::create($goods_order,true);
+            //将提交到订单的商品从购物车移除
+            \app\home\model\Cart::destroy($ids);
         }
+
+        //支付宝支付
+        //模拟表单提交
+        $html="<form id='alipayment' action='/plugins/alipay/pagepay/pagepay.php' method='post' style='display:none'>
+                    <input id='WIDout_trade_no' name='WIDout_trade_no' value='$order_sn'/>
+                    <input id='WIDsubject' name='WIDsubject' value='品优购订单'/>
+                    <input id='WIDtotal_amount' name='WIDtotal_amount' value='$order_amount'/>
+                    <input id='WIDbody' name='WIDbody' value='品优购商城自营商品'/>
+                </form><script >document.getElementById('alipayment').submit();</script>";
+        echo $html;
+
+
     }
-
-
 }

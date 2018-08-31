@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"D:\www\shangcheng\public/../application/home\view\cart\index.html";i:1535532318;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535422169;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"D:\www\shangcheng\public/../application/home\view\cart\index.html";i:1535685729;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535682313;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -90,13 +90,9 @@
                         <div class="fr shopcar">
                             <div class="show-shopcar" id="shopcar">
                                 <span class="car"></span>
-                                <a class="sui-btn btn-default btn-xlarge" href="cart.html" target="_blank">
+                                <a class="sui-btn btn-default btn-xlarge" href="<?php echo url('home/cart/index'); ?>" target="_blank">
                                     <span>我的购物车</span>
-                                    <i class="shopnum">0</i>
                                 </a>
-                                <div class="clearfix shopcarlist" id="shopcarlist" style="display:none">
-                                    <p>"啊哦，你的购物车还没有商品哦！"</p>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -160,13 +156,19 @@
 	<script type="text/javascript" src="/static/home/js/pages/index.js"></script>
     <script>
         $(function(){
-            var num=$('.sum');
-            var num_all=0;
-            $.each(num,function(i,j){
-                var a=$(j).html();
-               num_all=num_all+parseInt(a);
+            $('.row_check').click(function(){
+                var num=$(".row_check");
+                var num_all=0;
+                $.each(num,function(i,j){
+
+                    if($(j).prop('checked')==true) {
+                        var a = $(j).closest('ul').find("span[class='sum']").html();
+                        num_all = num_all + parseInt(a);
+                    }
+                });
+                $('#total_price').html("¥"+num_all);
             });
-            $('#total_price').html("¥"+num_all);
+
 
             //给结算按钮绑定点击事件
             $('#jiesuan').click(function(){
@@ -209,7 +211,6 @@
 				</div>
 				<div class="cart-item-list">
 					<div class="cart-body">
-
                 <?php foreach($data_cart as $v): ?>
 						<div class="cart-list">
 							<ul class="goods-list yui3-g">
@@ -239,7 +240,6 @@
 							</ul>
 						</div>
                 <?php endforeach; ?>
-
 					</div>
 				</div>
 			</div>
@@ -561,7 +561,7 @@
                 <!-- 购物车 -->
                 <div style="visibility: hidden;" class="J-content toolbar-panel tbar-panel-cart toolbar-animate-out">
                     <h3 class="tbar-panel-header J-panel-header">
-                        <a href="" class="title"><i></i><em class="title">购物车</em></a>
+                        <a href="<?php echo url('home/cart/index'); ?>" class="title"><i></i><em class="title">购物车</em></a>
                         <span class="close-panel J-close" onclick="cartPanelView.tbar_panel_close('cart');" ></span>
                     </h3>
                     <div class="tbar-panel-main">
