@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"D:\www\shangcheng\public/../application/home\view\cart\add_success.html";i:1535441079;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535682313;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"D:\www\shangcheng\public/../application/home\view\cart\add_success.html";i:1535441079;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535783362;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -32,7 +32,7 @@
                         <?php endif; ?>
                     </ul>
                     <ul class="fr">
-                        <li class="f-item">我的订单</li>
+                        <li class="f-item"><a href="<?php echo url('home/order/myorder'); ?>">我的订单</a></li>
                         <li class="f-item space"></li>
                         <li class="f-item"><a href="home.html" target="_blank">我的品优购</a></li>
                         <li class="f-item space"></li>

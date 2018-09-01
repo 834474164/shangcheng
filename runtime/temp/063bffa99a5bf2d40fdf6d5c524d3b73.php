@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"D:\www\shangcheng\public/../application/home\view\cart\nogoods.html";i:1535680975;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535783362;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\www\shangcheng\public/../application/home\view\order\myorder.html";i:1535797126;s:51:"D:\www\shangcheng\application\home\view\layout.html";i:1535783362;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -151,168 +151,286 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="/static/home/css/pages-cart.css" />
+    <link rel="stylesheet" type="text/css" href="/static/home/css/pages-myOrder.css" />
 
-
-	<script type="text/javascript" src="/static/home/js/pages/index.js"></script>
-	</div>
-	
-	<!--主内容-->
-	<div class="cart py-container">
-		<!--All goods-->
-		<div class="allgoods">
-            <div id="nogoods">
-                <span>
-                    购物车还没有任何商品!
-                </span>
-            </div>
-			<div class="clearfix"></div>
-			<div class="deled">
-				<span>已删除商品，您可以重新购买或加关注：</span>
-				<div class="cart-list del">
-					<ul class="goods-list yui3-g">
-						<li class="yui3-u-1-2">
-							<div class="good-item">
-								<div class="item-msg">Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存</div>
-							</div>
-						</li>
-						<li class="yui3-u-1-6"><span class="price">8848.00</span></li>
-						<li class="yui3-u-1-6">
-							<span class="number">1</span>
-						</li>
-						<li class="yui3-u-1-8">
-							<a href="#none">重新购买</a>
-							<a href="#none">移到我的关注</a>
-						</li>
-					</ul>
+	<!--header-->
+	<div id="account">
+		<div class="py-container">
+			<div class="yui3-g home">
+				<!--左侧列表-->
+				<div class="yui3-u-1-6 list">
+					<dl>
+						<dt><i>·</i> 订单中心</dt>
+						<dd>我的订单</dd>
+						<dd>团购订单</dd>
+						<dd>本地生活订单 </dd>
+						<dd>我的预售</dd>
+						<dd>评价晒单</dd>
+						<dd>取消订单记录</dd>
+					</dl>
+					<dl>
+						<dt><i>·</i> 关注中心</dt>
+						<dd>关注的商品 </dd>
+						<dd>关注的店铺</dd>
+						<dd>关注的专辑 </dd>
+						<dd>关注的品牌</dd>
+						<dd>关注的活动 </dd>
+						<dd>浏览历史</dd>
+					</dl>
+					<dl>
+						<dt><i>·</i> 特色业务</dt>
+						<dd>我的营业厅 </dd>
+						<dd>京东通信 </dd>
+						<dd>定期送 </dd>
+						<dd>京东代下单</dd>
+						<dd>我的回收单 </dd>
+						<dd>节能补贴</dd>
+						<dd>医药服务 </dd>
+						<dd>流量加油站 </dd>
+						<dd>黄金托管</dd>
+					</dl>
+					<dl>
+						<dt><i>·</i> 客户服务</dt>
+						<dd>返修退换货 </dd>
+						<dd>价格保护 </dd>
+						<dd>意见建议 </dd>
+						<dd>购买咨询 </dd>
+						<dd>交易纠纷 </dd>
+						<dd>我的发票</dd>
+					</dl>
+					<dl>
+						<dt><i>·</i> 设置</dt>
+						<dd>个人信息 </dd>
+						<dd>收货地址 </dd>
+					</dl>
 				</div>
-			</div>
-			<div class="liked">
-				<ul class="sui-nav nav-tabs">
-					<li class="active">
-						<a href="#index" data-toggle="tab">猜你喜欢</a>
-					</li>
-					<li>
-						<a href="#profile" data-toggle="tab">特惠换购</a>
-					</li>
-				</ul>
-				<div class="clearfix"></div>
-				<div class="tab-content">
-					<div id="index" class="tab-pane active">
-						<div id="myCarousel" data-ride="carousel" data-interval="4000" class="sui-carousel slide">
-							<div class="carousel-inner">
-								<div class="active item">
-									<ul>
-										<li>
-											<img src="/static/home/img/like1.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
-										</li>
-										<li>
-											<img src="/static/home/img/like2.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
-										</li>
-										<li>
-											<img src="/static/home/img/like3.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
-										</li>
-										<li>
-											<img src="/static/home/img/like4.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
-										</li>
-									</ul>
-								</div>
-								<div class="item">
-									<ul>
-										<li>
-											<img src="/static/home/img/like1.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
-										</li>
-										<li>
-											<img src="/static/home/img/like2.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
-										</li>
-										<li>
-											<img src="/static/home/img/like3.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
-										</li>
-										<li>
-											<img src="/static/home/img/like4.png" />
-											<div class="intro">
-												<i>Apple苹果iPhone 6s (A1699)</i>
-											</div>
-											<div class="money">
-												<span>$29.00</span>
-											</div>
-											<div class="incar">
-												<a href="#" class="sui-btn btn-bordered btn-xlarge btn-default"><i class="car"></i><span class="cartxt">加入购物车</span></a>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<a href="#myCarousel" data-slide="prev" class="carousel-control left">‹</a>
-							<a href="#myCarousel" data-slide="next" class="carousel-control right">›</a>
+				<!--右侧主内容-->
+				<div class="yui3-u-5-6 body">
+					<div class="order">
+						<div class="mt">
+							<span class="fl"><strong>我的订单</strong></span>
 						</div>
 					</div>
-					<div id="profile" class="tab-pane">
-						<p>特惠选购</p>
+
+					<div class="order-detail">
+
+						<div class="ever">
+							<ul class="sui-nav nav-tabs">
+								<li class="active">
+									<a href="#all" data-toggle="tab">全部订单<i class="mark">5</i></a>
+								</li>
+								<li>
+									<a href="#pay" data-toggle="tab">待付款<i class="mark">2</i></a>
+								</li>
+								<li>
+									<a href="#receive" data-toggle="tab">待收货<i class="mark">1</i></a>
+								</li>
+								<li>
+									<a href="#remark" data-toggle="tab">待评价<i class="mark">2</i></a>
+								</li>
+							</ul>
+							<div class="clearfix"></div>
+							
+							<div class="tab-content">
+								<div class="chosetype">
+											<table class="sui-table table-bordered-simple">
+												<thead>
+													<tr>
+														<th width="29%">
+															<span class="sui-dropdown dropdown-bordered"><span class="dropdown-inner">
+								      	<a role="button" href="javascript:void(0);" data-toggle="dropdown" data-trigger="hover" class="dropdown-toggle">近三个月订单 <i class="arrow"> <img src="/static/home/img/barrow.png"/></i></a>
+									    <ul role="menu" aria-labelledby="drop1" class="sui-dropdown-menu">
+									      <li role="presentation"  class="active"><a role="menuitem" tabindex="-1" href="#">近三个月订单</a></li>
+									      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2016年订单</a></li>
+									      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2015年订单</a></li>
+									      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2014年订单</a></li>
+									    </ul></span></span>
+														</th>
+														<th width="31%">订单详情</th>
+														<th width="13%">收货人</th>
+														<th>金额</th>
+														<th>
+															<span class="sui-dropdown dropdown-bordered"><span class="dropdown-inner">
+								      	<a role="button" href="javascript:void(0);" data-toggle="dropdown" data-trigger="hover" class="dropdown-toggle">全部状态 <i class="arrow"> <img src="/static/home/img/barrow.png"/></i></a>
+									    <ul role="menu" aria-labelledby="drop1" class="sui-dropdown-menu">
+									      <li role="presentation"  class="active"><a role="menuitem" tabindex="-1" href="#">全部状态</a></li>
+									      
+									      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">等待付款</a></li>
+									       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">等待收货</a></li>
+									        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">已完成</a></li>
+									       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">已取消</a></li>
+									    </ul></span></span>
+														</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												</tbody>
+											</table>
+										</div>
+								<div id="all" class="tab-pane active">
+									<div class="orders">
+
+									<?php foreach($order as $a): ?>
+										<table class="sui-table table-bordered">
+											<thead>
+												<tr>
+													<th colspan="5">
+														<span class="ordertitle"><?php echo $a['create_time']; ?>　订单编号：<?php echo $a['order_sn']; ?> <span class="pull-right delete"><img src="/static/home/img/delete.png"/></span></span>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+                                            <?php foreach($order_goods[$a['id']] as $k=>$v): if(($k != 10000)): ?>
+
+
+												<tr>
+
+													<td width="60%">
+														<div class="typographic"><img src="<?php echo $v['goods_logo']; ?>" />
+															<a href="#" class="block-text"><?php echo $v['goods_name']; ?></a><span>x<?php echo $v['number']; ?></span>
+															<ul class="unstyled list-inline">
+																<li>申请售后</li>
+															</ul>
+														</div>
+													</td>
+                                                    <?php if(($k == "0")): ?>
+													<td rowspan="<?php echo $order_goods[$a['id']][10000]; ?>" width="8%" class="center"><?php echo $a['consignee_name']; ?></td>
+													<td rowspan="<?php echo $order_goods[$a['id']][10000]; ?>" width="13%" class="center">
+														<ul class="unstyled">
+															<li>总金额¥<?php echo $a['order_amount']; ?></li>
+															<li>在线支付</li>
+
+														</ul>
+													</td>
+
+													<td rowspan="<?php echo $order_goods[$a['id']][10000]; ?>" width="8%" class="center">
+														<a href="#" class="btn"><?php echo $a['pay_status']; ?></a>
+													</td>
+													<td rowspan="<?php echo $order_goods[$a['id']][10000]; ?>" width="13%" class="center">
+														<ul class="unstyled">
+															<li>
+                                                                <?php if(($a['pay_status'] == "已付款")): ?>
+																<a href="javascript:;" class="sui-btn btn-info">查看详情</a>
+                                                                <?php else: ?>
+                                                                <a href="#" class="sui-btn btn-info" style="background-color:orangered">立即付款</a>
+                                                                <?php endif; ?>
+															</li>
+
+														</ul>
+													</td>
+                                                    <?php endif; ?>
+												</tr>
+                                            <?php endif; endforeach; ?>
+
+											</tbody>
+										</table>
+                                    <?php endforeach; ?>
+
+									</div>
+
+								</div>
+
+								<div id="pay" class="tab-pane">
+									<p>待付款</p>
+								</div>
+								<div id="receive" class="tab-pane">
+									<p>待收货</p>
+								</div>
+								<div id="remark" class="tab-pane">
+									<p>待评价</p>
+								</div>
+							</div>
+						</div>
+
 					</div>
+
+					<div class="order">
+						<div class="mt">
+							<span class="fl"><strong>猜你喜欢</strong></span>
+						</div>
+					</div>
+					<div class="like-list">
+						<ul class="yui3-g">
+							<li class="yui3-u-1-4">
+								<div class="list-wrap">
+									<div class="p-img">
+										<img src="/static/home/img/_/itemlike01.png" />
+									</div>
+									<div class="attr">
+										<em>DELL戴尔Ins 15MR-7528SS 15英寸 银色 笔记本</em>
+									</div>
+									<div class="price">
+										<strong>
+										<em>¥</em>
+										<i>3699.00</i>
+									</strong>
+									</div>
+									<div class="commit">
+										<i class="command">已有6人评价</i>
+									</div>
+								</div>
+							</li>
+							<li class="yui3-u-1-4">
+								<div class="list-wrap">
+									<div class="p-img">
+										<img src="/static/home/img/_/itemlike02.png" />
+									</div>
+									<div class="attr">
+										<em>Apple苹果iPhone 6s/6s Plus 16G 64G 128G</em>
+									</div>
+									<div class="price">
+										<strong>
+										<em>¥</em>
+										<i>4388.00</i>
+									</strong>
+									</div>
+									<div class="commit">
+										<i class="command">已有700人评价</i>
+									</div>
+								</div>
+							</li>
+							<li class="yui3-u-1-4">
+								<div class="list-wrap">
+									<div class="p-img">
+										<img src="/static/home/img/_/itemlike03.png" />
+									</div>
+									<div class="attr">
+										<em>DELL戴尔Ins 15MR-7528SS 15英寸 银色 笔记本</em>
+									</div>
+									<div class="price">
+										<strong>
+										<em>¥</em>
+										<i>4088.00</i>
+									</strong>
+									</div>
+									<div class="commit">
+										<i class="command">已有700人评价</i>
+									</div>
+								</div>
+							</li>
+							<li class="yui3-u-1-4">
+								<div class="list-wrap">
+									<div class="p-img">
+										<img src="/static/home/img/_/itemlike04.png" />
+									</div>
+									<div class="attr">
+										<em>DELL戴尔Ins 15MR-7528SS 15英寸 银色 笔记本</em>
+									</div>
+									<div class="price">
+										<strong>
+										<em>¥</em>
+										<i>4088.00</i>
+									</strong>
+									</div>
+									<div class="commit">
+										<i class="command">已有700人评价</i>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+
 				</div>
 			</div>
 		</div>

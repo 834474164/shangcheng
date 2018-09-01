@@ -15,7 +15,7 @@ class Order extends Base
     public function index()
     {
         if(!session('user')){
-            session('back_url','home/order/index');
+            session('back_url','home/cart/index');
             $this->redirect('home/index/loginview');
         }
         $ids=request()->param('id');
@@ -130,7 +130,27 @@ class Order extends Base
      */
     public function myorder()
     {
-        return view();
+        //判断用户是否登陆,登陆了才能查询订单
+        if(!session('user')){
+            session('back_url','home/order/myorder');
+            $this->redirect('home/index/loginview');
+        }
+        //获取当前用户信息
+        $user_id=session('user.id');
+        //查询当前用户的订单数据
+        $order=\app\home\model\Order::where(['user_id'=>$user_id])->select();
+        //查询所有订单商品
+        $order_goods=\app\home\model\Order_goods::select();
+        $all=[];
+           foreach($order_goods as $a=>$b){
+                   $all[$b['order_id']][]=$b;
+           }
+        foreach($all as $k=>$j){
+            $length=count($j);
+            $all[$k][10000]=$length;
+        }
+//        dump($all);die;
+        return view('myorder',['order'=>$order,'order_goods'=>$all]);
     }
 
 }
