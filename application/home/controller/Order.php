@@ -121,7 +121,16 @@ class Order extends Base
                     <input id='WIDbody' name='WIDbody' value='品优购商城自营商品'/>
                 </form><script >document.getElementById('alipayment').submit();</script>";
         echo $html;
-
-
     }
+
+    /**
+     * 我的订单
+     *
+     * @return \think\Response
+     */
+    public function myorder()
+    {
+        return view();
+    }
+
 }

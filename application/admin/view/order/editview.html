@@ -1,0 +1,22 @@
+
+    <!-- 右 -->
+    <div class="content">
+        <div class="header">
+            <h1 class="page-title">订单信息修改</h1>
+        </div>
+
+        <div class="well">
+            <!-- edit form -->
+            <form action="{:url('admin/order/edit')}" method="post" id="tab">
+                <input type="hidden" name="id" value="{$order.id}">
+                <label>订单号：</label>
+                <span>{$order.order_sn}</span>
+                <label>用户名：</label>
+                <span>{$order.username}</span>
+                <label>订单金额：</label>
+                <input type="text" name="order_amount" value="{$order.order_amount}" class="input-xlarge">
+                <label>收件地址：</label>
+                <input type="text" name="consignee_address" value="{$order.consignee_address}" class="input-xlarge">
+                <button class="btn btn-primary" type="submit" >修改</button>
+            </form>
+        </div>
